@@ -1,0 +1,10 @@
+name:   すずかけ祭コンサート2017
+date:   "2017-05-14"
+place:  東京工業大学 すずかけ台キャンパス 多目的ホール
+path:   /2017/suzukake
+program:
+    - composer: Brahms, Johannes
+      name:     ヴァイオリン・ソナタ第1番ト長調「雨の歌」
+      player:
+        - vn: 櫻庭 遥
+        - pf: 古清水 智夏
