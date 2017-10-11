@@ -62,5 +62,5 @@ image::/img/logo.png[]
 == Contact
 
 * link:https://docs.google.com/forms/d/1LWg2af8o1BzJTdzeYCLAcNGUVktlALSeZSZVzc-0Bxo/viewform?usp=send_form[お問い合わせフォーム]
-* https://www.facebook.com/platanus.piano/[Facebook]
-* link:https://twitter.com/platanusnokai[Twitter]
+* link:https://www.facebook.com/platanus.piano/[Facebook]
+* link:https://twitter.com/platanus_piano/[Twitter]

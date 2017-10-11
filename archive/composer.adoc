@@ -3,4 +3,4 @@
 
 == 作曲者一覧
 
-include::composer[]
+include::composer/data[]

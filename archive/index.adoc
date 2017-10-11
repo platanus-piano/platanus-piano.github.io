@@ -3,6 +3,11 @@ Archive
 
 == Archive
 
-過去の演奏会の情報です．
+過去の演奏会の記録です．
 
-* link:/archive/composer/[作曲者一覧]
+* link:/archive/player.html[演奏者別]
+* link:/archive/composer.html[作曲者別]
+* 演奏会別
+** 2017
+*** link:/archive/2017/koudaisai/[工大祭コンサート]
+*** link:/archive/2017/suzukake/[すずかけ祭コンサート]

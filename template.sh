@@ -37,6 +37,7 @@ echo "</header>"
 
 echo "<p>"
 echo "<a href='/'>Top</a> | "
+echo "<a href='/archive/'>Archive</a> | "
 echo "<a href='/member/'>Member</a> | "
 echo "<a href='/links/'>Links</a>"
 echo "</p>"
