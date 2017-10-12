@@ -14,7 +14,6 @@ jq --slurp -c '.' $jsons > all.json
 # concert {{{
 #----------------
 
-jq -r '.[].path' all.json > paths
 function concert() {
     path=$PWD/archive$1
 
@@ -45,7 +44,7 @@ function concert() {
         $path/program.json > $path/program
 }
 export -f concert
-parallel --no-notice concert :::: paths
+parallel --no-notice concert ::: `jq -r '.[].path' all.json`
 # }}}
 
 
