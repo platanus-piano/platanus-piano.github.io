@@ -56,3 +56,39 @@ program:
       player:
         - vc: 肥後 勇輝
         - pf: 尾崎 有美
+
+    - composer: Beethoven, Ludwig van
+      name:     ピアノ・ソナタ31番第1楽章
+      player:
+        - pf: 市村 智輝
+
+    - composer: Qeen
+      name:     Bohemian Rhapsody
+      player:
+        - pf: 宮前 知佐子
+
+    - composer: Chopin, Frédéric
+      name:     バラード2番
+      player:
+        - pf: 小笠原 拓哉
+
+    - composer: Lange, Gustav
+      name:     花の歌
+      player:
+        - pf:   原田 真梨
+
+    - composer: Ravel, Maurice
+      name:     ヴァイオリン・ソナタG-dur
+      player:
+        - vn:   安藤 満知哉
+        - pf:   宇佐美 琴
+
+    - composer: Rachmaninoff, Sergei
+      name:     ピアノ協奏曲第二番第一楽章(石川芳 編)
+      player:
+        - pf:   黒木 祐子
+
+    - composer: Prokofiev, Sergey
+      name:     ピアノ・ソナタ3番
+      player:
+        - pf:   古清水 智夏
