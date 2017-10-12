@@ -56,7 +56,7 @@ parallel --no-notice concert :::: paths
 
 jq -r '[.[].program[].composer] | unique | .[] | . as $name | @uri "\(.)" as $name_uri | "* link:/archive/composer/?name=\($name_uri)[\($name)]"' all.json > archive/composer/list
 
-jq -c '[.[] | . as $concert | .program[] ] | group_by(.composer)' all.json > archive/composer/data.json
+jq -c '[.[] | . as $concert | .program[] | .["concert_name"] = $concert.name | .["concert_path"] = $concert.path] | group_by(.composer)' all.json > archive/composer/data.json
 
 
 
@@ -66,7 +66,7 @@ jq -c '[.[] | . as $concert | .program[] ] | group_by(.composer)' all.json > arc
 
 jq -r '[.[].program[].player[] | .[]] | unique | .[] | . as $name | @uri "\(.)" as $name_uri | "* link:/archive/player/?name=\($name_uri)[\($name)]"' all.json > archive/player/list
 
-jq -c '[.[] | . as $concert | .program[] | . as $program | .player[] | to_entries[] | {name: .value, concert_name: $concert.name, concert_path: $concert.path, program: $program}] | [group_by(.name)[] | {name : (.[0].name), program: .}]' all.json > archive/player/data.json
+jq -c '[.[] | . as $concert | .program[] | . as $program | .player[] | to_entries[] | .value as $player_name | $program | .["player_name"] = $player_name | .["concert_name"] = $concert.name | .["concert_path"] = $concert.path | . ] | group_by(.name)' all.json > archive/player/data.json
 
 
 rm all.json
