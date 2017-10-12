@@ -3,18 +3,31 @@
 export PWD=`pwd`
 
 yamls=`find ./archive -name 'data.yml'`
-parallel ./yaml2json '<' {} '>' {//}/data.json ::: $yamls
-jsons=`find ./archive -name 'data.json'`
+parallel ./yaml2json '<' {} '>' {//}/program.json ::: $yamls
+jsons=`find ./archive -name 'program.json'`
 
-jq --slurp '.' $jsons > all.json
+jq --slurp -c '.' $jsons > all.json
 
 #----------------
-# concert
+# concert {{{
 #----------------
 
 jq -r '.[].path' all.json > paths
 function concert() {
     path=$PWD/archive$1
+
+    name=`jq -r '.name' $path/data.json`
+    date=`jq -r '.date' $path/data.json`
+
+    # index.adoc
+
+    echo -e "= $name\n" > $path/index.adoc
+    echo -e "== $name\n" >> $path/index.adoc
+    echo -e "**日時** $date\n" >> $path/index.adoc
+    echo -e "=== プログラム\n" >> $path/index.adoc
+    echo -e "include::program[]\n" >> $path/index.adoc
+    echo -e "=== 写真\n" >> $path/index.adoc
+    echo -e "include::imgs[]\n" >> $path/index.adoc
 
     # images
     echo > $path/imgs
@@ -30,17 +43,20 @@ function concert() {
 }
 export -f concert
 parallel --no-notice concert :::: paths
+# }}}
 
 #----------------
 # composer
 #----------------
 
-jq -r '[.[].program[].composer] | unique | .[] | . as $composer | @uri "/archive/composer/\(.)/" | "* link:\(.)[\($composer)]"' all.json > archive/composer/data
+jq -r '[.[].program[].composer] | unique | .[] | . as $name | @uri "\(.)" as $name_uri | "* link:/archive/composer/?name=\($name_uri)[\($name)]"' all.json > archive/composer/list
+
+jq -c '[.[] | . as $concert | .program[] ] | group_by(.composer)' all.json > archive/composer/data.json
 
 #----------------
 # player
 #----------------
 
-jq -r '[.[].program[].player[] | .[]] | unique | .[] | . as $player | @uri "/archive/player/\(.)/" | "* link:\(.)[\($player)]"' all.json > archive/player/data
+jq -r '[.[].program[].player[] | .[]] | unique | .[] | . as $name | @uri "\(.)" as $name_uri | "* link:/archive/player/?name=\($name_uri)[\($name)]"' all.json > archive/player/list
 
-#parallel rm {} ::: $jsons
+jq -c '[.[] | . as $concert | .program[] | . as $program | .player[] | to_entries[] | {name: .value, concert_name: $concert.name, concert_path: $concert.path, program: $program}] | [group_by(.name)[] | {name : (.[0].name), program: .}]' all.json > archive/player/data.json

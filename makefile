@@ -21,5 +21,3 @@ htmls: $(OBJS)
 
 clean:
 	find . -name '*.html' -delete
-	rm -rf archive/player/*
-	rm -rf archive/composer/*

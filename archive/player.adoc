@@ -1,6 +1,5 @@
-演奏者別アーカイブ
-==================
+= 演奏者別アーカイブ
 
 == 演奏者一覧
 
-include::player/data[]
+include::player/list[]

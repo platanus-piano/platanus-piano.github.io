@@ -1,0 +1,6 @@
+= 名前
+
+++++
+<div id='main'></div>
+<script src="/js/player.js"></script>
+++++

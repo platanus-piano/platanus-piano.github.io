@@ -1,6 +1,5 @@
-作曲者別アーカイブ
-==================
+= 作曲者別アーカイブ
 
 == 作曲者一覧
 
-include::composer/data[]
+include::composer/list[]
