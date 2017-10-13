@@ -21,7 +21,6 @@ function concert() {
     date=`jq -r '.date' $path/program.json`
 
     # index.adoc
-
     echo -e "= $name\n" > $path/index.adoc
     echo -e "== $name\n" >> $path/index.adoc
     echo -e "**日時** $date\n" >> $path/index.adoc
@@ -65,7 +64,7 @@ jq -c '[.[] | . as $concert | .program[] | .["concert_name"] = $concert.name | .
 
 jq -r '[.[].program[].player[] | .[]] | unique | .[] | . as $name | @uri "\(.)" as $name_uri | "* link:/archive/player/?name=\($name_uri)[\($name)]"' all.json > archive/player/list
 
-jq -c '[.[] | . as $concert | .program[] | . as $program | .player[] | to_entries[] | .value as $player_name | $program | .["player_name"] = $player_name | .["concert_name"] = $concert.name | .["concert_path"] = $concert.path | . ] | group_by(.name)' all.json > archive/player/data.json
+jq -c '[.[] | . as $concert | .program[] | . as $program | .player[] | to_entries[] | .value as $player_name | $program | .["player_name"] = $player_name | .["concert_name"] = $concert.name | .["concert_path"] = $concert.path | . ] | group_by(.player_name)' all.json > archive/player/data.json
 
 
 rm all.json
