@@ -29,6 +29,7 @@ title=${title:2}
 echo "<!doctype html>"
 echo "<meta name='viewport' content='width=device-width, initial-scale=1'>"
 echo "<meta charset='utf-8'>"
+echo "<link rel='shortcut icon' type='image/png' href='/img/favicon.png'/>"
 echo "<script src="/js/jquery-3.2.1.min.js"></script>"
 echo "<script src="/js/main.js"></script>"
 echo "<link rel='stylesheet' href='/css/main.css'>"
