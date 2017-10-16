@@ -1,2 +1,10 @@
-東京工業大学ピアノアンサンブルサークル
-======================================
+= プラタナスの会 ホームページ
+
+東京工業大学のピアノ・アンサンブルサークル「プラタナスの会」のホームページです．
+
+== サイトマップ
+
+* link:platanus-piano.github.io/[Top]
+** link:platanus-piano.github.io/archive/[Archive]
+** link:platanus-piano.github.io/member/[Memver]
+** link:platanus-piano.github.io/links/[Links]
