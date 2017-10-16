@@ -6,7 +6,7 @@ var editor = new JSONEditor(document.getElementById('editor_holder'), {
         items: {
             type: "object", 
             title: "Concert", 
-            headerTemplate: "{{self.name}} {{self.year}}", 
+            headerTemplate: "{{self.year}}-{{self.month}}-{{self.day}}", 
             options: {
                 disable_edit_json: true
             }, 

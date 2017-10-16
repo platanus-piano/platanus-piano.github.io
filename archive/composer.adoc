@@ -15,6 +15,7 @@
         str += "<ul>";
         for(var composer of data){
             var name = composer[0].composer;
+            //str += "<li><p><a href='/archive/composer/?name=" + name + "'>" + name + "</a> (" + composer.length + ")</p></li>";
             str += "<li><p><a href='/archive/composer/?name=" + name + "'>" + name + "</a></p></li>";
         }
         str += "</ul>";

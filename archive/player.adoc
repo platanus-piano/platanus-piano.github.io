@@ -12,9 +12,12 @@
     .done(function(data) {
         var str = "";
 
+        data.sort(function(a, b){return a.length < b.length;});
+
         str += "<ul>";
         for(var player of data){
             var name = player[0].player_name;
+            //str += "<li><p><a href='/archive/player/?name=" + name + "'>" + name + "</a> (" + player.length + ")</p></li>";
             str += "<li><p><a href='/archive/player/?name=" + name + "'>" + name + "</a></p></li>";
         }
         str += "</ul>";
