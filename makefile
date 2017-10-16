@@ -2,16 +2,15 @@
 
 SRCS	= $(shell find . -name '*.adoc')
 OBJS	= $(SRCS:.adoc=.html)
-YAMLS	= $(shell find . -name '*.yml')
 
-all: clean archive htmls
+all: archive htmls
 
 archive:
 	./archive.sh
 
 htmls: $(OBJS)
 
-%.html: %.adoc archive
+%.html: %.adoc
 	@asciidoc -b html5 -s $<
 	@./template.sh $< $@ > $@.tmp
 	@mv $@.tmp $@

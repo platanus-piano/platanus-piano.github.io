@@ -8,7 +8,7 @@ jq '[. | keys[] as $id | .[$id] | .["id"] = $id]' archive/all.json > archive/all
 # concert
 #----------------
 
-jq '[.[] | del(.program)] | group_by(.year) | reverse' archive/all_id.json > archive/concert/data.json
+jq '[.[] | del(.program)] | sort_by(.year, .month, .day) | reverse | group_by(.year) | reverse' archive/all_id.json > archive/concert/data.json
 
 
 

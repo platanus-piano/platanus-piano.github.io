@@ -12,7 +12,7 @@
 <script src="/js/jsoneditor.js"></script>
 <div id='editor_holder'></div>
 <button id='save'>Save</button>
-<script src="/js/concert_editor.js"></script>
+<script src="/js/editor.js"></script>
 <a id='save_link'></a>
 ++++
 

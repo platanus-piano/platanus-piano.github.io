@@ -31,10 +31,10 @@
 
         str += "<h2>" + concert.name + concert.year + "</h2>";
 
-        str += "<p><strong>日付</strong> " + concert.year + "年" + concert.month + "月" + concert.day + "日" + "</p>";
-        str += "<p><strong>場所</strong> " + concert.place + "</p>";
-        if(concert.imgs != ""){
-            str += "<p><strong>写真</strong> <a href='" + concert.imgs + "'>GooglePhotosのアルバム</a></p>";
+        str += "<p><strong>日付 : </strong> " + concert.year + "年" + concert.month + "月" + concert.day + "日" + "</p>";
+        str += "<p><strong>場所 : </strong> " + concert.place + "</p>";
+        if(concert.imgs){
+            str += "<p><strong>写真 : </strong> <a href='" + concert.imgs + "'>GooglePhotosのアルバム</a></p>";
         }
 
 
@@ -50,4 +50,4 @@
 </div>
 </div>
 <hr>
-<footer><p>last update (this page) <br> 2017-10-16 19:47:19 (JST)</p></footer>
+<footer><p>last update (this page) <br> 2017-10-17 04:21:06 (JST)</p></footer>
