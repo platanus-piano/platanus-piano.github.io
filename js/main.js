@@ -16,10 +16,26 @@ var getUrlParameter = function(sParam) {
 var program2html = function(program) {
     var str = "<ul>";
     for(var playing of program) {
-        str += "<li><p><strong>" + playing.name + "</strong> / <a href='/archive/composer/?name=" + playing.composer + "'>" + playing.composer + "</a></p></li>";
+        str += "<li><p>";
+        str += "<strong>" + playing.name + "</strong>";
+        str += " / ";
+        str += "<a href='/archive/composer/?name=" + playing.composer + "'>";
+        str += playing.composer;
+        str += "</a>";
+
+        if(playing.arrangedby){
+            str += " (" + playing.arrangedby + " 編曲)";
+        }
+        str += "</p></li>";
+
         str += "<ul>";
             for(var player of playing.players){
-                str += "<li><p>" + player.instrument + " : <a href='/archive/player/?name=" + player.name + "'>" + player.name  + "</a></p></li>";
+                str += "<li><p>";
+                str += player.instrument;
+                str += " : ";
+                str += "<a href='/archive/player/?name=" + player.name + "'>";
+                str += player.name;
+                str += "</a></p></li>";
             }
         str += "</ul>";
     }
