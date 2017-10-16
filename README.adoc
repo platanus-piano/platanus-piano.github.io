@@ -4,7 +4,7 @@
 
 == サイトマップ
 
-* link:platanus-piano.github.io/[Top]
-** link:platanus-piano.github.io/archive/[Archive]
-** link:platanus-piano.github.io/member/[Memver]
-** link:platanus-piano.github.io/links/[Links]
+* link:https://platanus-piano.github.io/[Top]
+** link:https://platanus-piano.github.io/archive/[Archive]
+** link:https://platanus-piano.github.io/member/[Memver]
+** link:https://platanus-piano.github.io/links/[Links]
