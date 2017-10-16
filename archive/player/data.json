@@ -63,6 +63,19 @@
   ],
   [
     {
+      "name": "ロンドカプリチオーソ",
+      "composer": "Mendelssohn, Felix",
+      "arrangedby": "",
+      "players": [
+        {
+          "instrument": "pf",
+          "name": "宇佐美 琴"
+        }
+      ],
+      "id": 0,
+      "player_name": "宇佐美 琴"
+    },
+    {
       "name": "ヴァイオリン・ソナタG-dur",
       "composer": "Ravel, Maurice",
       "arrangedby": "",
@@ -78,21 +91,6 @@
       ],
       "id": 0,
       "player_name": "宇佐美 琴"
-    }
-  ],
-  [
-    {
-      "name": "ロンドカプリチオーソ",
-      "composer": "Mendelssohn, Felix",
-      "arrangedby": "",
-      "players": [
-        {
-          "instrument": "pf",
-          "name": "宇佐美 琴 "
-        }
-      ],
-      "id": 0,
-      "player_name": "宇佐美 琴 "
     }
   ],
   [
@@ -186,11 +184,11 @@
       "players": [
         {
           "instrument": "pf",
-          "name": "市村 智輝 "
+          "name": "市村 智輝"
         }
       ],
       "id": 0,
-      "player_name": "市村 智輝 "
+      "player_name": "市村 智輝"
     }
   ],
   [

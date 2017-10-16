@@ -15,7 +15,7 @@
         str += "<ul>";
         for(var player of data){
             var name = player[0].player_name;
-            str += "<li><p><a href='/archive/composer/?name=" + name + "'>" + name + "</a></p></li>";
+            str += "<li><p><a href='/archive/player/?name=" + name + "'>" + name + "</a></p></li>";
         }
         str += "</ul>";
 
