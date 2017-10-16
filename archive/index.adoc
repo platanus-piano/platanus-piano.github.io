@@ -2,11 +2,36 @@
 
 == Archive
 
-過去の演奏会の記録です．
+過去の演奏会の記録です．編集中です．
 
 * link:/archive/player.html[演奏者別]
 * link:/archive/composer.html[作曲者別]
-* 演奏会別
-** 2017
-*** link:/archive/2017/koudaisai/[工大祭コンサート]
-*** link:/archive/2017/suzukake/[すずかけ祭コンサート]
+
+=== 演奏会別
+
+++++
+<div id='holder'></div>
+<script>
+(function() {
+    $.getJSON( "/archive/concert/data.json", {
+        format: "json"
+    })
+    .done(function(data) {
+        var str = "";
+
+        str += "<ul>";
+        for(var year of data){
+            str += "<li><p><strong>" + year[0].year + "<strong></p></li>";
+            str += "<ul>";
+            for(var concert of year){
+                str += "<li><p>" + concert.month + "月 : <a href='/archive/concert/?id=" + concert.id + "'>" + concert.name + "</a><p></li>";
+            }
+            str += "</ul>";
+        }
+        str += "</ul>";
+
+        $('#holder').append(str);
+    });
+})();
+</script>
+++++

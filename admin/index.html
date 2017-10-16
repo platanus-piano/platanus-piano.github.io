@@ -1,0 +1,33 @@
+<!doctype html>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta charset='utf-8'>
+<link rel='shortcut icon' type='image/png' href='/img/favicon.png'/>
+<script src=/js/jquery-3.2.1.min.js></script>
+<script src=/js/main.js></script>
+<link rel='stylesheet' href='/css/main.css'>
+<title>Admin : Platanus</title>
+<header>
+<a href='/'><h1>Platanus</h1><h2>東京工業大学プラタナスの会</h2></a>
+</header>
+<p>
+<a href='/'>Top</a> | 
+<a href='/archive/'>Archive</a> | 
+<a href='/member/'>Member</a> | 
+<a href='/links/'>Links</a>
+</p>
+<div class="sect1">
+<h2 id="_演奏会データ編集">演奏会データ編集</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>演奏会データ(json)を編集できます．</p></div>
+<div class="paragraph"><p>現在のデータがデフォルトで入力されています．</p></div>
+<div class="paragraph"><p>一番下のsaveボタンで編集したデータをローカルにダウンロードして，サーバにアップロードしてください．</p></div>
+<script src="/js/jsoneditor.js"></script>
+<div id='editor_holder'></div>
+<button id='save'>Save</button>
+<script src="/js/concert_editor.js"></script>
+<a id='save_link'></a>
+<div class="paragraph"><p>powered by <a href="https://github.com/jdorn/json-editor">jdorn/json-editor</a></p></div>
+</div>
+</div>
+<hr>
+<footer><p>last update (this page) <br> 2017-10-16 12:17:49 (JST)</p></footer>

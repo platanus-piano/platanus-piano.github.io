@@ -18,10 +18,8 @@ var program2html = function(program) {
     for(var playing of program) {
         str += "<li><p><strong>" + playing.name + "</strong> / <a href='/archive/composer/?name=" + playing.composer + "'>" + playing.composer + "</a></p></li>";
         str += "<ul>";
-            for(var player of playing.player){
-                for(var key in player){
-                    str += "<li><p>" + key + " : <a href='/archive/player/?name=" + player[key] + "'>" + player[key]  + "</a></p></li>";
-                }
+            for(var player of playing.players){
+                str += "<li><p>" + player.instrument + " : <a href='/archive/player/?name=" + player.name + "'>" + player.name  + "</a></p></li>";
             }
         str += "</ul>";
     }

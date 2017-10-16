@@ -1,50 +1,14 @@
 #!/bin/bash
 
-export PWD=`pwd`
-
-yamls=`find ./archive -name 'program.yml'`
-parallel ./yaml2json '<' {} '>' {//}/program.json ::: $yamls
-jsons=`find ./archive -name 'program.json'`
-
-jq --slurp -c '.' $jsons > all.json
+jq '[. | keys[] as $id | .[$id] | .["id"] = $id]' archive/all.json > archive/all_id.json
 
 
 
 #----------------
-# concert {{{
+# concert
 #----------------
 
-function concert() {
-    path=$PWD/archive$1
-
-    name=`jq -r '.name' $path/program.json`
-    date=`jq -r '.date' $path/program.json`
-
-    # index.adoc
-    echo -e "= $name\n" > $path/index.adoc
-    echo -e "== $name\n" >> $path/index.adoc
-    echo -e "**日時** $date\n" >> $path/index.adoc
-    echo -e "=== プログラム\n" >> $path/index.adoc
-    echo -e "include::program[]\n" >> $path/index.adoc
-    echo -e "=== 写真\n" >> $path/index.adoc
-    echo -e "include::imgs[]\n" >> $path/index.adoc
-
-    # images
-    echo > $path/imgs
-    parallel echo "image::"{/}"[]" '>>' $path/imgs ::: `find $path -iname '*.jpg'`
-
-    # program
-    jq -r \
-        '.program[] | . as $program |
-        "* **\(.name)** / \(.composer)" as $title |
-        .player | map(to_entries[] | .["key"] as $key | .["value"] as $name | "\($key) \($name)") |
-        reduce .[] as $item (""; . + "** "+ $item + "\n") | . as $players |
-        "\($title)\n\($players)"'\
-        $path/program.json > $path/program
-}
-export -f concert
-parallel --no-notice concert ::: `jq -r '.[].path' all.json`
-# }}}
+jq '[.[] | del(.program)] | group_by(.year) | reverse' archive/all_id.json > archive/concert/data.json
 
 
 
@@ -52,9 +16,7 @@ parallel --no-notice concert ::: `jq -r '.[].path' all.json`
 # composer
 #----------------
 
-jq -r '[.[].program[].composer] | unique | .[] | . as $name | @uri "\(.)" as $name_uri | "* link:/archive/composer/?name=\($name_uri)[\($name)]"' all.json > archive/composer/list
-
-jq -c '[.[] | . as $concert | .program[] | .["concert_name"] = $concert.name | .["concert_path"] = $concert.path] | group_by(.composer)' all.json > archive/composer/data.json
+jq '[.[] | .["id"] as $id | .program[] | .["id"] = $id | . ] | group_by(.composer)' archive/all_id.json > archive/composer/data.json
 
 
 
@@ -62,9 +24,4 @@ jq -c '[.[] | . as $concert | .program[] | .["concert_name"] = $concert.name | .
 # player
 #----------------
 
-jq -r '[.[].program[].player[] | .[]] | unique | .[] | . as $name | @uri "\(.)" as $name_uri | "* link:/archive/player/?name=\($name_uri)[\($name)]"' all.json > archive/player/list
-
-jq -c '[.[] | . as $concert | .program[] | . as $program | .player[] | to_entries[] | .value as $player_name | $program | .["player_name"] = $player_name | .["concert_name"] = $concert.name | .["concert_path"] = $concert.path | . ] | group_by(.player_name)' all.json > archive/player/data.json
-
-
-rm all.json
+jq '[.[] | .["id"] as $id | .program[] | .["id"] = $id | . as $playing | .players[] | .name as $player_name | $playing | .["player_name"] = $player_name | .] | group_by(.player_name)' archive/all_id.json > archive/player/data.json

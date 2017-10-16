@@ -18,7 +18,7 @@
 <div class="sect1">
 <h2 id="_archive">Archive</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>過去の演奏会の記録です．</p></div>
+<div class="paragraph"><p>過去の演奏会の記録です．編集中です．</p></div>
 <div class="ulist"><ul>
 <li>
 <p>
@@ -30,32 +30,35 @@
 <a href="/archive/composer.html">作曲者別</a>
 </p>
 </li>
-<li>
-<p>
-演奏会別
-</p>
-<div class="ulist"><ul>
-<li>
-<p>
-2017
-</p>
-<div class="ulist"><ul>
-<li>
-<p>
-<a href="/archive/2017/koudaisai/">工大祭コンサート</a>
-</p>
-</li>
-<li>
-<p>
-<a href="/archive/2017/suzukake/">すずかけ祭コンサート</a>
-</p>
-</li>
 </ul></div>
-</li>
-</ul></div>
-</li>
-</ul></div>
+<div class="sect2">
+<h3 id="_演奏会別">演奏会別</h3>
+<div id='holder'></div>
+<script>
+(function() {
+    $.getJSON( "/archive/concert/data.json", {
+        format: "json"
+    })
+    .done(function(data) {
+        var str = "";
+
+        str += "<ul>";
+        for(var year of data){
+            str += "<li><p><strong>" + year[0].year + "<strong></p></li>";
+            str += "<ul>";
+            for(var concert of year){
+                str += "<li><p>" + concert.month + "月 : <a href='/archive/concert/?id=" + concert.id + "'>" + concert.name + "</a><p></li>";
+            }
+            str += "</ul>";
+        }
+        str += "</ul>";
+
+        $('#holder').append(str);
+    });
+})();
+</script>
+</div>
 </div>
 </div>
 <hr>
-<footer><p>last update (this page) <br> 2017-10-12 13:57:43 (JST)</p></footer>
+<footer><p>last update (this page) <br> 2017-10-16 19:48:03 (JST)</p></footer>

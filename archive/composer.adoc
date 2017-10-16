@@ -2,4 +2,25 @@
 
 == 作曲者一覧
 
-include::composer/list[]
+++++
+<div id='holder'></div>
+<script>
+(function() {
+    $.getJSON( "/archive/composer/data.json", {
+        format: "json"
+    })
+    .done(function(data) {
+        var str = "";
+
+        str += "<ul>";
+        for(var composer of data){
+            var name = composer[0].composer;
+            str += "<li><p><a href='/archive/composer/?name=" + name + "'>" + name + "</a></p></li>";
+        }
+        str += "</ul>";
+
+        $('#holder').append(str);
+    });
+})();
+</script>
+++++

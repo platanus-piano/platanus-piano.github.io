@@ -2,4 +2,25 @@
 
 == 演奏者一覧
 
-include::player/list[]
+++++
+<div id='holder'></div>
+<script>
+(function() {
+    $.getJSON( "/archive/player/data.json", {
+        format: "json"
+    })
+    .done(function(data) {
+        var str = "";
+
+        str += "<ul>";
+        for(var player of data){
+            var name = player[0].player_name;
+            str += "<li><p><a href='/archive/composer/?name=" + name + "'>" + name + "</a></p></li>";
+        }
+        str += "</ul>";
+
+        $('#holder').append(str);
+    });
+})();
+</script>
+++++

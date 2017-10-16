@@ -1,0 +1,34 @@
+= 演奏会別アーカイブ
+
+++++
+<div id='holder'></div>
+<script>
+(function() {
+    var id = getUrlParameter('id');
+    $.getJSON( "/archive/all_id.json", {
+        format: "json"
+    })
+    .done(function(data) {
+        var str = "";
+        var concert = data[id];
+        $('title').text(concert.year + concert.name + " : Platanus");
+
+        str += "<h2>" + concert.name + concert.year + "</h2>";
+
+        str += "<p><strong>日付</strong> " + concert.year + "年" + concert.month + "月" + concert.day + "日" + "</p>";
+        str += "<p><strong>場所</strong> " + concert.place + "</p>";
+        if(concert.imgs != ""){
+            str += "<p><strong>写真</strong> <a href='" + concert.imgs + "'>GooglePhotosのアルバム</a></p>";
+        }
+
+
+        if(concert.program.length != 0){
+            str += "<h3>プログラム</h3>";
+            str += program2html(concert.program);
+        }
+
+        $('#holder').append(str);
+    });
+})();
+</script>
+++++

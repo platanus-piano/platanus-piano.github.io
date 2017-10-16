@@ -5,7 +5,7 @@
 <script src=/js/jquery-3.2.1.min.js></script>
 <script src=/js/main.js></script>
 <link rel='stylesheet' href='/css/main.css'>
-<title>名前 : Platanus</title>
+<title>作曲者別アーカイブ : Platanus</title>
 <header>
 <a href='/'><h1>Platanus</h1><h2>東京工業大学プラタナスの会</h2></a>
 </header>
@@ -17,9 +17,29 @@
 </p>
 <div id="preamble">
 <div class="sectionbody">
-<div id='main'></id>
-<script src="/js/composer.js"></script>
+<div id='holder'></div>
+<script>
+(function() {
+    var name = getUrlParameter('name');
+    $('title').text(name + " : Platanus");
+    $.getJSON( "/archive/composer/data.json", {
+        format: "json"
+    })
+    .done(function(data) {
+        var str = "";
+        $('#holder').append("<h2>" + name + "の曲一覧</h2>");
+        var program;
+        for(var programs of data) {
+            if(programs[0].composer == name){
+                program = programs;
+                break;
+            }
+        }
+        $('#holder').append(program2html(program));
+    });
+})();
+</script>
 </div>
 </div>
 <hr>
-<footer><p>last update (this page) <br> 2017-10-12 18:39:02 (JST)</p></footer>
+<footer><p>last update (this page) <br> 2017-10-16 19:34:16 (JST)</p></footer>

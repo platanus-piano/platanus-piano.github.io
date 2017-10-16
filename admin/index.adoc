@@ -1,0 +1,19 @@
+= Admin
+
+== 演奏会データ編集
+
+演奏会データ(json)を編集できます．
+
+現在のデータがデフォルトで入力されています．
+
+一番下のsaveボタンで編集したデータをローカルにダウンロードして，サーバにアップロードしてください．
+
+++++
+<script src="/js/jsoneditor.js"></script>
+<div id='editor_holder'></div>
+<button id='save'>Save</button>
+<script src="/js/concert_editor.js"></script>
+<a id='save_link'></a>
+++++
+
+powered by link:https://github.com/jdorn/json-editor[jdorn/json-editor]
