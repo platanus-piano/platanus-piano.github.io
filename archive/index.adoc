@@ -21,16 +21,17 @@
     .done(function(data) {
         var str = "";
 
-        str += "<ul>";
+        //str += "<ul>";
         for(var year of data){
-            str += "<li><p><strong>" + year[0].year + "<strong></p></li>";
+            //str += "<li><p><strong>" + year[0].year + "<strong></p></li>";
+            str += "<h4>" + year[0].year + "</h4>";
             str += "<ul>";
             for(var concert of year){
                 str += "<li><p>" + concert.month + "月 : <a href='/archive/concert/?id=" + concert.id + "'>" + concert.name + "</a><p></li>";
             }
             str += "</ul>";
         }
-        str += "</ul>";
+        //str += "</ul>";
 
         $('#holder').append(str);
     });

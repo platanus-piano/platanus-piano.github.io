@@ -2618,7 +2618,272 @@
     "place": "日本福音ルーテル大岡山教会",
     "comment": "",
     "imgs": "https://photos.app.goo.gl/Ain8OH6naTwEunoH3",
-    "program": [],
+    "program": [
+      {
+        "name": "Winter Wonderland",
+        "composer": "Bernard, Felix",
+        "arrangedby": "",
+        "players": [
+          {
+            "instrument": "pf(primo)",
+            "name": "古清水 智夏"
+          },
+          {
+            "instrument": "pf(second)",
+            "name": "古清水 洋子"
+          }
+        ]
+      },
+      {
+        "name": "Sleigh Ride",
+        "composer": "Anderson, Leroy",
+        "arrangedby": "",
+        "players": [
+          {
+            "instrument": "pf(primo)",
+            "name": "古清水 智夏"
+          },
+          {
+            "instrument": "pf(second)",
+            "name": "古清水 洋子"
+          }
+        ]
+      },
+      {
+        "name": "花は咲く",
+        "composer": "Kanno, Yoko",
+        "arrangedby": "",
+        "players": [
+          {
+            "instrument": "pf",
+            "name": "餅田 渓"
+          }
+        ]
+      },
+      {
+        "name": "ノクターン 遺作(第20番)",
+        "composer": "Chopin, Frédéric",
+        "arrangedby": "",
+        "players": [
+          {
+            "instrument": "pf",
+            "name": "織茂 奈津美"
+          }
+        ]
+      },
+      {
+        "name": "メロディー 〜オルフォイスより〜",
+        "composer": "Gluck, Christoph Willibald",
+        "arrangedby": "",
+        "players": [
+          {
+            "instrument": "vn",
+            "name": "櫻庭 遥"
+          }
+        ]
+      },
+      {
+        "name": "渇望, GOD WAS KILLED, Snow falling on my heart",
+        "composer": "Aoki, Yuta",
+        "arrangedby": "",
+        "players": [
+          {
+            "instrument": "pf",
+            "name": "青木 祐太"
+          }
+        ]
+      },
+      {
+        "name": "ノクターン 第2番",
+        "composer": "Chopin, Frédéric",
+        "arrangedby": "",
+        "players": [
+          {
+            "instrument": "pf",
+            "name": "間宮 淳子"
+          }
+        ]
+      },
+      {
+        "name": "無伴奏ヴァイオリンのためのパルティータ 第二番より「ジーグ」",
+        "composer": "Bach, Johann Sebastian",
+        "arrangedby": "",
+        "players": [
+          {
+            "instrument": "vn",
+            "name": "荻野 紗良"
+          },
+          {
+            "instrument": "pf",
+            "name": "原田 真実"
+          }
+        ]
+      },
+      {
+        "name": "アヴェ・マリア",
+        "composer": "Bach, Johann Sebastian",
+        "arrangedby": "グノー",
+        "players": [
+          {
+            "instrument": "vn",
+            "name": "荻野 紗良"
+          },
+          {
+            "instrument": "pf",
+            "name": "原田 真実"
+          }
+        ]
+      },
+      {
+        "name": "超絶技巧練習曲第11番「夕べの調べ」",
+        "composer": "Liszt, Franz",
+        "arrangedby": "",
+        "players": [
+          {
+            "instrument": "pf",
+            "name": "増田 祐佳子"
+          }
+        ]
+      },
+      {
+        "name": "願いの叶う木",
+        "composer": "Marumoto, Daigo",
+        "arrangedby": "",
+        "players": [
+          {
+            "instrument": "vn",
+            "name": "荻野 紗良"
+          },
+          {
+            "instrument": "vn",
+            "name": "櫻庭 遥"
+          },
+          {
+            "instrument": "gt",
+            "name": "倉重 宏康"
+          },
+          {
+            "instrument": "pf",
+            "name": "金 恩寵"
+          }
+        ]
+      },
+      {
+        "name": "Friends",
+        "composer": "Hisaishi, Jho",
+        "arrangedby": "",
+        "players": [
+          {
+            "instrument": "pf",
+            "name": "小島 和士"
+          }
+        ]
+      },
+      {
+        "name": "バラード第3番",
+        "composer": "Chopin, Frédéric",
+        "arrangedby": "",
+        "players": [
+          {
+            "instrument": "pf",
+            "name": "金田 侑正"
+          }
+        ]
+      },
+      {
+        "name": "愛の夢",
+        "composer": "Liszt, Franz",
+        "arrangedby": "",
+        "players": [
+          {
+            "instrument": "vn",
+            "name": "苅谷 智行"
+          },
+          {
+            "instrument": "pf",
+            "name": "間宮 淳子"
+          }
+        ]
+      },
+      {
+        "name": "Je te veux",
+        "composer": "Satie, Erik",
+        "arrangedby": "",
+        "players": [
+          {
+            "instrument": "pf",
+            "name": "中沢 有美"
+          }
+        ]
+      },
+      {
+        "name": "プレリュードOp.3-2",
+        "composer": "Rachmaninoff, Sergei",
+        "arrangedby": "",
+        "players": [
+          {
+            "instrument": "pf",
+            "name": "中沢 有美"
+          }
+        ]
+      },
+      {
+        "name": "8つの夜想曲 第1番",
+        "composer": "Poulenc, Francis",
+        "arrangedby": "",
+        "players": [
+          {
+            "instrument": "pf",
+            "name": "竹森 那由多"
+          }
+        ]
+      },
+      {
+        "name": "鏡:鐘の谷",
+        "composer": "Ravel, Maurice",
+        "arrangedby": "",
+        "players": [
+          {
+            "instrument": "pf",
+            "name": "竹森 那由多"
+          }
+        ]
+      },
+      {
+        "name": "クリスマス・パーティ・メドレー",
+        "composer": "Ueda, Koji",
+        "arrangedby": "",
+        "players": [
+          {
+            "instrument": "pf",
+            "name": "原田 真実"
+          }
+        ]
+      },
+      {
+        "name": "クリスマスソング♪",
+        "composer": "Unknown",
+        "arrangedby": "",
+        "players": [
+          {
+            "instrument": "harm",
+            "name": "稲川 有徳"
+          },
+          {
+            "instrument": "vn",
+            "name": "荻野 紗良"
+          },
+          {
+            "instrument": "vn",
+            "name": "櫻庭 遥"
+          },
+          {
+            "instrument": "pf",
+            "name": "古清水 智夏"
+          }
+        ]
+      }
+    ],
     "id": 17
   },
   {
