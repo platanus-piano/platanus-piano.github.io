@@ -25,3 +25,6 @@ jq '[.[] | . as $concert | .program[] | .["id"] = $concert.id | .["concert_name"
 #----------------
 
 jq '[.[] | . as $concert | .program[] | .["id"] = $concert.id | .["concert_name"] = $concert.name | .["year"] = $concert.year | . as $playing | .players[] | .name as $player_name | $playing | .["player_name"] = $player_name | .] | group_by(.player_name)' archive/all_id.json > archive/player/data.json
+
+
+rm archive/all_id.json
