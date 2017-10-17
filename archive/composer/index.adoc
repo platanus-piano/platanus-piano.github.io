@@ -19,7 +19,7 @@
                 break;
             }
         }
-        $('#holder').append(program2html(program));
+        $('#holder').append(program2html(program, true));
     });
 })();
 </script>

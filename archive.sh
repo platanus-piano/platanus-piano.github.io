@@ -1,6 +1,6 @@
 #!/bin/bash
 
-jq '[. | keys[] as $id | .[$id] | .["id"] = $id]' archive/all.json > archive/all_id.json
+jq 'sort_by(.year, .month, .day) | reverse | [. | keys[] as $id | .[$id] | .["id"] = $id]' archive/all.json > archive/all_id.json
 
 
 
@@ -8,7 +8,7 @@ jq '[. | keys[] as $id | .[$id] | .["id"] = $id]' archive/all.json > archive/all
 # concert
 #----------------
 
-jq '[.[] | del(.program)] | sort_by(.year, .month, .day) | reverse | group_by(.year) | reverse' archive/all_id.json > archive/concert/data.json
+jq '[.[] | del(.program)] | group_by(.year) | reverse' archive/all_id.json > archive/concert/data.json
 
 
 
@@ -16,7 +16,7 @@ jq '[.[] | del(.program)] | sort_by(.year, .month, .day) | reverse | group_by(.y
 # composer
 #----------------
 
-jq '[.[] | .["id"] as $id | .program[] | .["id"] = $id | . ] | group_by(.composer)' archive/all_id.json > archive/composer/data.json
+jq '[.[] | . as $concert | .program[] | .["id"] = $concert.id | .["concert_name"] = $concert.name | .["year"] = $concert.year | . ] | group_by(.composer)' archive/all_id.json > archive/composer/data.json
 
 
 
@@ -24,4 +24,4 @@ jq '[.[] | .["id"] as $id | .program[] | .["id"] = $id | . ] | group_by(.compose
 # player
 #----------------
 
-jq '[.[] | .["id"] as $id | .program[] | .["id"] = $id | . as $playing | .players[] | .name as $player_name | $playing | .["player_name"] = $player_name | .] | group_by(.player_name)' archive/all_id.json > archive/player/data.json
+jq '[.[] | . as $concert | .program[] | .["id"] = $concert.id | .["concert_name"] = $concert.name | .["year"] = $concert.year | . as $playing | .players[] | .name as $player_name | $playing | .["player_name"] = $player_name | .] | group_by(.player_name)' archive/all_id.json > archive/player/data.json

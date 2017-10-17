@@ -13,9 +13,20 @@ var getUrlParameter = function(sParam) {
     }
 };
 
-var program2html = function(program) {
-    var str = "<ul>";
+var program2html = function(program, flag = false) {
+    var str = "";
+    var prev_year = "0000";
+    var prev_id = -1;
     for(var playing of program) {
+        if(playing.year != prev_year && flag){
+            str += "<h3>" + playing.year + "</h3>";
+            prev_year = playing.year;
+        }
+        if(playing.id != prev_id && flag){
+            str += "<h4><a href='/archive/concert/?id=" + playing.id + "'>" + playing.concert_name + " " + playing.year + "</a></h4>";
+            prev_id = playing.id;
+        }
+        str += "<ul>";
         str += "<li><p>";
         str += "<strong>" + playing.name + "</strong>";
         str += " / ";
@@ -38,7 +49,7 @@ var program2html = function(program) {
                 str += "</a></p></li>";
             }
         str += "</ul>";
+        str += "</ul>";
     }
-    str += "</ul>";
     return str;
 }
