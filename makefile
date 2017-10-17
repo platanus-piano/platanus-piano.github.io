@@ -16,5 +16,8 @@ htmls: $(OBJS)
 	@mv $@.tmp $@
 	@echo convert $<
 
+archive_clean: htmls
+	rm archive/all_id.json
+
 clean:
 	find . -name '*.html' -delete
