@@ -8,7 +8,7 @@ var editor = new JSONEditor(document.getElementById('editor_holder'), {
             title: "Concert", 
             headerTemplate: "{{self.year}}-{{self.month}}-{{self.day}}", 
             options: {
-                disable_edit_json: true
+                disable_edit_json: true, 
             }, 
             properties: {
                 name: {
@@ -53,7 +53,7 @@ var editor = new JSONEditor(document.getElementById('editor_holder'), {
                             },
                             composer: {
                                 type: "string",
-                                title: "Composer name"
+                                title: "Composer name",
                             },
                             arrangedby: {
                                 type: "string",
@@ -70,6 +70,7 @@ var editor = new JSONEditor(document.getElementById('editor_holder'), {
                                         instrument: {
                                             type: "string",
                                             title: "Instrument", 
+                                            default: "pf"
                                         }, 
                                         name: {
                                             type: "string",
@@ -86,12 +87,41 @@ var editor = new JSONEditor(document.getElementById('editor_holder'), {
     }
 });
 
+
 (function() {
     $.getJSON( "/archive/all.json", {
         format: "json"
     })
     .done(function(data) {
         editor.setValue(data);
+    });
+})();
+
+(function() {
+    $.getJSON( "/archive/composer/data.json", {
+        format: "json"
+    })
+    .done(function(data) {
+        var str = "";
+        for(var composer of data){
+            var composer_name = composer[0].composer;
+            str += "<option value='" + composer_name + "'>";
+        }
+        $("#composer_name").append(str);
+    });
+})();
+
+(function() {
+    $.getJSON( "/archive/player/data.json", {
+        format: "json"
+    })
+    .done(function(data) {
+        var str = "";
+        for(var player of data){
+            var player_name = player[0].player_name;
+            str += "<option value='" + player_name + "'>";
+        }
+        $("#player_name").append(str);
     });
 })();
 
@@ -104,4 +134,12 @@ document.getElementById('save').addEventListener('click', function() {
     a.target = '_blank';
     a.download = 'all.json';
     a.click();
+});
+
+$(document).on("focus", "input[name$=\\[composer\\]]", function(){
+    $(this).attr("list", "composer_name");
+});
+
+$(document).on("focus", "input[name$=\\[name\\]]", function(){
+    $(this).attr("list", "player_name");
 });

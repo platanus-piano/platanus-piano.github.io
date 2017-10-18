@@ -19,7 +19,6 @@ jq '[.[] | del(.program)] | group_by(.year) | reverse' archive/all_id.json > arc
 jq '[.[] | . as $concert | .program[] | .["id"] = $concert.id | .["concert_name"] = $concert.name | .["year"] = $concert.year | . ] | group_by(.composer)' archive/all_id.json > archive/composer/data.json
 
 
-
 #----------------
 # player
 #----------------

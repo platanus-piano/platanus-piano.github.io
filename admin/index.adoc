@@ -9,11 +9,15 @@
 一番下のsaveボタンで編集したデータをローカルにダウンロードして，サーバにアップロードしてください．
 
 ++++
-<script src="/js/jsoneditor.js"></script>
 <div id='editor_holder'></div>
 <button id='save'>Save</button>
-<script src="/js/editor.js"></script>
 <a id='save_link'></a>
+
+<datalist id='composer_name'></datalist>
+<datalist id='player_name'></datalist>
+
+<script src="/js/jsoneditor.js"></script>
+<script src="/js/editor.js"></script>
 ++++
 
 powered by link:https://github.com/jdorn/json-editor[jdorn/json-editor]
