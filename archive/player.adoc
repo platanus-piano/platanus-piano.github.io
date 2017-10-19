@@ -14,6 +14,10 @@
 
         data.sort(function(a, b){return a.length < b.length;});
 
+        if(data.length){
+            str += "<p>合計" + data.length + "人がプラタナスで演奏をしてきました．</p>"
+        }
+
         str += "<ul>";
         for(var player of data){
             var name = player[0].player_name;

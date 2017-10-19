@@ -29,6 +29,10 @@
 
         data.sort(function(a, b){return a.length < b.length;});
 
+        if(data.length){
+            str += "<p>合計" + data.length + "人がプラタナスで演奏をしてきました．</p>"
+        }
+
         str += "<ul>";
         for(var player of data){
             var name = player[0].player_name;
@@ -44,4 +48,4 @@
 </div>
 </div>
 <hr>
-<footer><p>last update (this page) <br> 2017-10-19 12:25:20 (JST)</p></footer>
+<footer><p>last update (this page) <br> 2017-10-19 16:42:31 (JST)</p></footer>

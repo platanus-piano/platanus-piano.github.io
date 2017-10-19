@@ -2,10 +2,12 @@
 
 == Archive
 
-過去の演奏会の記録です．(一部プログラムが入手できず，未完成となっております)
+過去の演奏会の記録です．
 
-* link:/archive/player.html[演奏者別]
-* link:/archive/composer.html[作曲者別]
+何か間違いを発見されましたら，連絡いただけたらと思います．また，いくつかのコンサートについて，プログラムを入手できずにいます．お持ちの方がいらっしゃいましたら連絡ください．
+
+=== link:/archive/player.html[演奏者別]
+=== link:/archive/composer.html[作曲者別]
 
 === 演奏会別
 
