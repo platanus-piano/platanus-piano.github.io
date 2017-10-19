@@ -14,8 +14,10 @@ adoc=$1
 html=$2
 
 # source file timestamp
-epoch=`stat -c %Y $adoc`
-timestamp=`date -d \@${epoch} +'%F %T'`
+page_epoch=`stat -c %Y $adoc`
+page_timestamp=`date -d \@${page_epoch} +'%F %T'`
+data_epoch=`stat -c %Y archive/all.json`
+data_timestamp=`date -d \@${data_epoch} +'%F %T'`
 
 # get title
 title=`head -n 1 $adoc`
@@ -58,4 +60,9 @@ cat $html
 #----------------
 
 echo "<hr>"
-echo "<footer><p>last update (this page) <br> ${timestamp} (JST)</p></footer>"
+echo "<footer><p>"
+echo "<a href='https://docs.google.com/forms/d/1LWg2af8o1BzJTdzeYCLAcNGUVktlALSeZSZVzc-0Bxo/viewform?usp=send_form'>お問い合わせ(Google Forms)</a><br>"
+echo "Last update<br>"
+echo "${page_timestamp} (JST) (this page) <br>"
+echo "${data_timestamp} (JST) (archive data)"
+echo "</p></footer>"

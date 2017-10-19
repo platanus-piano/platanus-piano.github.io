@@ -3,14 +3,12 @@
 SRCS	= $(shell find . -name '*.adoc')
 OBJS	= $(SRCS:.adoc=.html)
 
-all: archive/all_id.json htmls
+all: htmls
 
-archive/all_id.json: archive/all.json
-	./archive.sh
 
 htmls: $(OBJS)
 
-%.html: %.adoc
+%.html: %.adoc template.sh
 	@asciidoc -b html5 -s $<
 	@./template.sh $< $@ > $@.tmp
 	@mv $@.tmp $@

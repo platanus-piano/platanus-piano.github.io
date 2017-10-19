@@ -5,7 +5,7 @@
 <script>
 (function() {
     var id = getUrlParameter('id');
-    $.getJSON( "/archive/all_id.json", {
+    $.getJSON( "/archive/all.json", {
         format: "json"
     })
     .done(function(data) {
