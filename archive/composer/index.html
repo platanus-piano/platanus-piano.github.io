@@ -30,7 +30,8 @@
         $('#holder').append("<h2>" + name + "の曲一覧</h2>");
         var program;
         for(var programs of data) {
-            if(programs[0].composer == name){
+            var composer_name = programs[0].composer;
+            if(composer_name == name){
                 program = programs;
                 break;
             }
@@ -42,4 +43,4 @@
 </div>
 </div>
 <hr>
-<footer><p>last update (this page) <br> 2017-10-17 10:04:02 (JST)</p></footer>
+<footer><p>last update (this page) <br> 2017-10-19 12:10:12 (JST)</p></footer>

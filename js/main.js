@@ -23,13 +23,16 @@ var program2html = function(program, flag = false) {
             prev_year = playing.year;
         }
         if(playing.id != prev_id && flag){
-            str += "<h4><a href='/archive/concert/?id=" + playing.id + "'>" + playing.concert_name + " " + playing.year + "</a></h4>";
+            str += "<h4><a href='/archive/concert/?id=" + playing.id + "'>";
+            str += playing.concert_name;
+            //str += " " + playing.year;
+            str += "</a></h4>";
             prev_id = playing.id;
         }
         str += "<ul>";
         str += "<li><p>";
         str += "<strong>" + playing.name + "</strong>";
-        str += " / ";
+        str += "<br>";
         str += "<a href='/archive/composer/?name=" + playing.composer + "'>";
         str += playing.composer;
         str += "</a>";
@@ -42,11 +45,16 @@ var program2html = function(program, flag = false) {
         str += "<ul>";
             for(var player of playing.players){
                 str += "<li><p>";
-                str += player.instrument;
+
+                str += "<tt>" + player.instrument + "</tt>";
                 str += " : ";
+
                 str += "<a href='/archive/player/?name=" + player.name + "'>";
                 str += player.name;
-                str += "</a></p></li>";
+                str += "</a>";
+
+
+                str += "</p></li>";
             }
         str += "</ul>";
         str += "</ul>";

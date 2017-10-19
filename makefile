@@ -1,11 +1,11 @@
-.PHONY: archive
+.PHONY:
 
 SRCS	= $(shell find . -name '*.adoc')
 OBJS	= $(SRCS:.adoc=.html)
 
 all: archive htmls
 
-archive:
+archive: archive/all.json
 	./archive.sh
 
 htmls: $(OBJS)

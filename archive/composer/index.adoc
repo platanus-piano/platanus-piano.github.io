@@ -14,7 +14,8 @@
         $('#holder').append("<h2>" + name + "の曲一覧</h2>");
         var program;
         for(var programs of data) {
-            if(programs[0].composer == name){
+            var composer_name = programs[0].composer;
+            if(composer_name == name){
                 program = programs;
                 break;
             }

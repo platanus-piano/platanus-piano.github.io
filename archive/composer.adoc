@@ -11,14 +11,20 @@
     })
     .done(function(data) {
         var str = "";
+        var prev_name = " ";
 
-        str += "<ul>";
         for(var composer of data){
             var name = composer[0].composer;
-            //str += "<li><p><a href='/archive/composer/?name=" + name + "'>" + name + "</a> (" + composer.length + ")</p></li>";
-            str += "<li><p><a href='/archive/composer/?name=" + name + "'>" + name + "</a></p></li>";
+            if(prev_name[0] != name[0]){
+                str += "<h3>" + name[0] + "</h3>";
+                prev_name = name;
+            }
+            str += "<ul>";
+            str += "<li><p>";
+            str += "<a href='/archive/composer/?name=" + name + "'>" + name + "</a> (" + composer.length + ")";
+            str += "</p></li>";
+            str += "</ul>";
         }
-        str += "</ul>";
 
         $('#holder').append(str);
     });

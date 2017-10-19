@@ -17,7 +17,7 @@ body {
 
 a {
   text-decoration: none;
-  font-weight: bold;
+  /*font-weight: bold;*/
   color: #337AB7;
 }
 
@@ -32,6 +32,10 @@ h2 {
 h3 {
     padding-left: 0.3em;
     border-left: solid 0.5em #B71C1C;
+}
+h4 {
+    padding-left: 0.3em;
+    border-left: solid 0.5em #424242;
 }
 
 /****************
