@@ -3,9 +3,9 @@
 SRCS	= $(shell find . -name '*.adoc')
 OBJS	= $(SRCS:.adoc=.html)
 
-all: archive htmls
+all: archive/all_id.json htmls
 
-archive: archive/all.json
+archive/all_id.json: archive/all.json
 	./archive.sh
 
 htmls: $(OBJS)
