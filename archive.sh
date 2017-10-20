@@ -10,7 +10,7 @@ mv archive/all.json.tmp archive/all.json
 # concert
 #----------------
 
-jq -c '[.[] | del(.program)] | group_by(.year) | reverse' archive/all.json > archive/concert/data.json
+#jq -c '[.[] | del(.program)] | group_by(.year) | reverse' archive/all.json > archive/concert/data.json
 
 
 

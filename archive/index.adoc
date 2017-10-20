@@ -4,7 +4,9 @@
 
 過去の演奏会の記録です．
 
-何か間違いを発見されましたら，連絡いただけたらと思います．また，いくつかのコンサートについて，プログラムを入手できずにいます．お持ちの方がいらっしゃいましたら連絡ください．
+何か間違いを発見されましたら，連絡いただけたらと思います．
+
+また，プログラム未収録のコンサートがいくつかあります．現物をお持ちの方がいらっしゃいましたら連絡いただけると嬉しいです．
 
 === link:/archive/player.html[演奏者別]
 === link:/archive/composer.html[作曲者別]
@@ -15,23 +17,32 @@
 <div id='holder'></div>
 <script>
 (function() {
-    $.getJSON( "/archive/concert/data.json", {
+    $.getJSON( "/archive/all.json", {
         format: "json"
     })
     .done(function(data) {
         var str = "";
 
-        //str += "<ul>";
-        for(var year of data){
-            //str += "<li><p><strong>" + year[0].year + "<strong></p></li>";
-            str += "<h4>" + year[0].year + "</h4>";
-            str += "<ul>";
-            for(var concert of year){
-                str += "<li><p>" + concert.month + "月 : <a href='/archive/concert/?id=" + concert.id + "'>" + concert.name + "</a><p></li>";
+        var prev_year = "0000";
+        for(var concert of data){
+            if(prev_year != concert.year){
+                str += "<h4>" + concert.year + "</h4>";
+                prev_year = concert.year;
             }
+            str += "<ul>";
+
+            str += "<li><p>";
+            str += concert.month + "月 : ";
+            str += "<a href='/archive/concert/?id=" + concert.id + "'>";
+            str += concert.name;
+            str += "</a>";
+            if(!concert.program.length){
+                str += " (プログラム未収録)";
+            }
+            str += "<p></li>";
+
             str += "</ul>";
         }
-        //str += "</ul>";
 
         $('#holder').append(str);
     });

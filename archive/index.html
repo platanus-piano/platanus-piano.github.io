@@ -10,16 +10,17 @@
 <a href='/'><h1>Platanus</h1><h2>東京工業大学プラタナスの会</h2></a>
 </header>
 <p>
-<a href='/'>Top</a> | 
-<a href='/archive/'>Archive</a> | 
-<a href='/member/'>Member</a> | 
-<a href='/links/'>Links</a>
+<strong><a href='/'>Top</a></strong> | 
+<strong><a href='/archive/'>Archive</a></strong> | 
+<strong><a href='/member/'>Member</a></strong> | 
+<strong><a href='/links/'>Links</a></strong>
 </p>
 <div class="sect1">
 <h2 id="_archive">Archive</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>過去の演奏会の記録です．</p></div>
-<div class="paragraph"><p>何か間違いを発見されましたら，連絡いただけたらと思います．また，いくつかのコンサートについて，プログラムを入手できずにいます．お持ちの方がいらっしゃいましたら連絡ください．</p></div>
+<div class="paragraph"><p>何か間違いを発見されましたら，連絡いただけたらと思います．</p></div>
+<div class="paragraph"><p>また，プログラム未収録のコンサートがいくつかあります．現物をお持ちの方がいらっしゃいましたら連絡いただけると嬉しいです．</p></div>
 <div class="sect2">
 <h3 id="_a_href_archive_player_html_演奏者別_a"><a href="/archive/player.html">演奏者別</a></h3>
 </div>
@@ -31,23 +32,32 @@
 <div id='holder'></div>
 <script>
 (function() {
-    $.getJSON( "/archive/concert/data.json", {
+    $.getJSON( "/archive/all.json", {
         format: "json"
     })
     .done(function(data) {
         var str = "";
 
-        //str += "<ul>";
-        for(var year of data){
-            //str += "<li><p><strong>" + year[0].year + "<strong></p></li>";
-            str += "<h4>" + year[0].year + "</h4>";
-            str += "<ul>";
-            for(var concert of year){
-                str += "<li><p>" + concert.month + "月 : <a href='/archive/concert/?id=" + concert.id + "'>" + concert.name + "</a><p></li>";
+        var prev_year = "0000";
+        for(var concert of data){
+            if(prev_year != concert.year){
+                str += "<h4>" + concert.year + "</h4>";
+                prev_year = concert.year;
             }
+            str += "<ul>";
+
+            str += "<li><p>";
+            str += concert.month + "月 : ";
+            str += "<a href='/archive/concert/?id=" + concert.id + "'>";
+            str += concert.name;
+            str += "</a>";
+            if(!concert.program.length){
+                str += " (プログラム未収録)";
+            }
+            str += "<p></li>";
+
             str += "</ul>";
         }
-        //str += "</ul>";
 
         $('#holder').append(str);
     });
@@ -60,6 +70,6 @@
 <footer><p>
 <a href='https://docs.google.com/forms/d/1LWg2af8o1BzJTdzeYCLAcNGUVktlALSeZSZVzc-0Bxo/viewform?usp=send_form'>お問い合わせ(Google Forms)</a><br>
 Last update<br>
-2017-10-19 16:45:49 (JST) (this page) <br>
-2017-10-19 16:16:46 (JST) (archive data)
+2017-10-20 11:34:20 (JST) (this page) <br>
+2017-10-20 11:35:18 (JST) (archive data)
 </p></footer>

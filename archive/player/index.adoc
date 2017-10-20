@@ -11,7 +11,7 @@
     })
     .done(function(data) {
         var str = "";
-        $('#holder').append("<h2>" + name + "さんの演奏一覧</h2>");
+        $('#holder').append("<h2>" + name + "の演奏一覧</h2>");
         var program;
         for(var programs of data) {
             if(programs[0].player_name == name){

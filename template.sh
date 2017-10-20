@@ -42,10 +42,10 @@ echo "<a href='/'><h1>Platanus</h1><h2>東京工業大学プラタナスの会</
 echo "</header>"
 
 echo "<p>"
-echo "<a href='/'>Top</a> | "
-echo "<a href='/archive/'>Archive</a> | "
-echo "<a href='/member/'>Member</a> | "
-echo "<a href='/links/'>Links</a>"
+echo "<strong><a href='/'>Top</a></strong> | "
+echo "<strong><a href='/archive/'>Archive</a></strong> | "
+echo "<strong><a href='/member/'>Member</a></strong> | "
+echo "<strong><a href='/links/'>Links</a></strong>"
 echo "</p>"
 
 #----------------
