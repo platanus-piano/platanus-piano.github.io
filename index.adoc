@@ -58,6 +58,8 @@ image::/img/member.jpg[]
 その後，名前を「プラタナスの会」に改め，
 毎年すずかけ祭と工大祭でコンサートを開いてきました．
 
+link:http://www.geocities.jp/amagaisan/[おまけ(昔のプラタナスのサイト)]
+
 過去の演奏会プログラムなどはlink:/archive/[Archive]にまとめてあります．是非ご覧ください．
 
 image::/img/logo.png[]
