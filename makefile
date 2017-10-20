@@ -5,7 +5,6 @@ OBJS	= $(SRCS:.adoc=.html)
 
 all: htmls
 
-
 htmls: $(OBJS)
 
 %.html: %.adoc template.sh
@@ -13,9 +12,6 @@ htmls: $(OBJS)
 	@./template.sh $< $@ > $@.tmp
 	@mv $@.tmp $@
 	@echo convert $<
-
-archive_clean: htmls
-	rm archive/all_id.json
 
 clean:
 	find . -name '*.html' -delete
