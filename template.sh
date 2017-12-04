@@ -38,7 +38,7 @@ echo "<link rel='stylesheet' href='/css/main.css'>"
 echo "<title>$title : Platanus</title>"
 
 echo "<header>"
-echo "<a href='/'><h1>Platanus</h1><h2>東京工業大学プラタナスの会</h2></a>"
+echo "<a href='/'><h1>Platanus</h1><h3>東工大ピアノ・アンサンブルサークル</h3></a>"
 echo "</header>"
 
 echo "<p>"
