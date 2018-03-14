@@ -37,6 +37,16 @@ echo "<script src="/js/main.js"></script>"
 echo "<link rel='stylesheet' href='/css/main.css'>"
 echo "<title>$title : Platanus</title>"
 
+
+echo "<!-- Global site tag (gtag.js) - Google Analytics -->"
+echo "<script async src='https://www.googletagmanager.com/gtag/js?id=UA-115735054-1'></script>"
+echo "<script>"
+echo "  window.dataLayer = window.dataLayer || [];"
+echo "  function gtag(){dataLayer.push(arguments);}"
+echo "  gtag('js', new Date());"
+echo "  gtag('config', 'UA-115735054-1');"
+echo "</script>"
+
 echo "<header>"
 echo "<a href='/'><h1>Platanus</h1><h3>東工大ピアノ・アンサンブルサークル</h3></a>"
 echo "</header>"
