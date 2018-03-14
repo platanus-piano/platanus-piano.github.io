@@ -7,11 +7,8 @@ all: htmls
 
 htmls: $(OBJS)
 
-%.html: %.adoc template.sh
-	@asciidoc -b html5 -s $<
-	@./template.sh $< $@ > $@.tmp
-	@mv $@.tmp $@
-	@echo convert $<
+%.html: %.adoc convert.rb
+	ruby ./convert.rb $< > $(basename $<).html
 
 clean:
 	find . -name '*.html' -delete
