@@ -49,3 +49,5 @@ Stellar Parallax
 http://markdalgleish.com/projects/stellar.js/
 
 test message for first commit
+
+text messeage for second commit
