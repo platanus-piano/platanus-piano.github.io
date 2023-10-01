@@ -1209,3 +1209,109 @@ figure {
 	z-index: 9999;
 	background: url(../images/hourglass.svg) center no-repeat #222222;
 }
+* {
+	box-sizing: border-box;
+  }
+  body {
+	background: #eeeeee;
+	margin: 2em;
+	font-family: "Roboto", sans-serif;
+  }
+  
+  h1 {
+	font-family: "Playfair Display", serif;
+	line-height: 0.2em;
+	&.large {
+	  font-size: 80px;
+	  letter-spacing: 2px;
+	  &:first-child {
+		margin-bottom: 1em;
+	  }
+	  .tiny {
+		font-size: 40px;
+		vertical-align: top;
+	  }
+	}
+	&.medium {
+	  font-size: 50px;
+	}
+	&.small {
+	  font-size: 26px;
+	  text-align: right;
+	}
+  }
+  
+  h2 {
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.4em;
+	margin-bottom: 2em;
+  }
+  
+  p {
+	font-size: 13px;
+	line-height: 1.4em;
+	text-align: justify;
+  }
+  .spread {
+	display: grid;
+	grid-template-columns: minmax(300px, 1.2fr) minmax(300px, 1fr);
+	//height: 100vh;
+	width: 100%;
+	box-shadow: 0 5px 15px hsla(0, 0, 50%, 0.5);
+	margin: 1em auto;
+  
+	&__left {
+	  background: black;
+	  background-image: url("https://source.unsplash.com/_-Rk63T6gkk");
+	  background-repeat: no-repeat;
+	  background-position: center center;
+	  background-size: cover;
+	}
+  
+	&__right {
+	  background: white;
+	  padding: 0 3em 0;
+	}
+  }
+  
+  .title {
+	text-align: center;
+	max-width: 200px;
+	margin: 0 auto 4em;
+  }
+  
+  .content {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	grid-gap: 2vw;
+  }
+  
+  .spread__page-bottom {
+	margin-top: 4em;
+	position: relative;
+	&:after {
+	  // aligning borders in a more controlled way
+	  content: '';
+	  border-top: 1px solid black;
+	  width: 50%;
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	}
+	// using Font Awesome icon instead of the bike illustration
+	.fa-bicycle {
+	  position: absolute;
+	  bottom: 83%;
+	  right: 0;
+	}
+	.num {
+	  padding: 1em;
+	  background: black;
+	  text-align: center;
+	  color: white;
+	  width: 4em;
+	  margin: 0 auto;
+	}
+  }
