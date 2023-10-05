@@ -1,7 +1,17 @@
 import Head from 'next/head';
-import { Box, Button } from '@mui/material';
+import { Box } from '@mui/material';
+import UpcomingConcerts from '@/components/contents/top/blocks/UpcomingConcerts';
+import PastConcerts from '@/components/contents/top/blocks/PastConcerets';
+import { client } from '@/configs/microCMS/client';
+import { TConcert } from '@/types/concerts';
 
-export default function Home() {
+export default function Home({
+  upcoming,
+  past,
+}: {
+  upcoming: TConcert[];
+  past: TConcert[];
+}) {
   return (
     <>
       <Head>
@@ -11,10 +21,27 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box component="main">
-        <Button variant="contained" color="primary">
-          Hello World
-        </Button>
+        <UpcomingConcerts concerts={upcoming} />
+        <PastConcerts concerts={past} />
       </Box>
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const upcomingData = await client.get({
+    endpoint: 'concerts',
+    queries: { limit: 2, filters: 'done[equals]false' },
+  });
+  const pastData = await client.get({
+    endpoint: 'concerts',
+    queries: { limit: 2, filters: 'done[equals]true' },
+  });
+
+  return {
+    props: {
+      upcoming: upcomingData.contents,
+      past: pastData.contents,
+    },
+  };
+};

@@ -18,6 +18,10 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
           />
+          <link
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap"
+            rel="stylesheet"
+          />
           {(this.props as any).emotionStyleTags}
         </Head>
         <body>
