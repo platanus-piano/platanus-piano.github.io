@@ -22,7 +22,7 @@ export default function Home({
       </Head>
       <Box component="main">
         <UpcomingConcerts concerts={upcoming} />
-        <PastConcerts concerts={past} />
+        <PastConcerts concerts={past} sx={{ mt: 5, mb: 5 }} />
       </Box>
     </>
   );

@@ -16,10 +16,12 @@ const SwiperControllButton = (props: TProps) => {
   const handleSwiperNext = () => {
     console.log('next');
     swiper.slideNext();
+    // console.log(swiper.activeIndex);
   };
   const handleSwiperPrev = () => {
     console.log('prev');
     swiper.slidePrev();
+    // console.log(swiper.activeIndex);
   };
 
   return (

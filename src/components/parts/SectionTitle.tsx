@@ -6,10 +6,35 @@ type TProps = {
   title: string;
   subTitle: string;
   sx?: SxProps;
+  type?: 'green' | 'white';
 };
 
 const SectionTitle = (props: TProps) => {
-  const { title, subTitle, sx } = props;
+  // props
+  const { title, subTitle, sx, type } = props;
+  // color
+  let color: { title: string; subTitle: string };
+  switch (type) {
+    case 'green':
+      color = {
+        title: theme.palette.green.main,
+        subTitle: theme.palette.text.primary,
+      };
+      break;
+    case 'white':
+      color = {
+        title: '#ffffff',
+        subTitle: '#ffffff',
+      };
+      break;
+    default:
+      color = {
+        title: theme.palette.text.primary,
+        subTitle: theme.palette.text.primary,
+      };
+      break;
+  }
+
   return (
     <Box
       component="div"
@@ -28,19 +53,24 @@ const SectionTitle = (props: TProps) => {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          borderBottom: `1px solid ${theme.palette.green.main}`,
+          borderBottom: `1px solid ${color.title}`,
           px: 2,
         }}
       >
         <Typography
           variant="h2"
           component="h2"
-          color="green.main"
-          sx={{ fontFamily: 'IBM Plex Sans, sans-serif', pb: 1 }}
+          color={color.title}
+          sx={{ fontFamily: 'IBM Plex Sans, sans-serif', pb: 3 }}
         >
           {title}
         </Typography>
-        <Typography variant="body1" component="p" sx={{ pb: 2 }}>
+        <Typography
+          variant="body2"
+          component="p"
+          color={color.subTitle}
+          sx={{ pb: 2 }}
+        >
           {subTitle}
         </Typography>
       </Box>

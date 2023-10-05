@@ -9,12 +9,14 @@ declare module '@mui/material/styles' {
     black: PaletteColorOptions;
     green: PaletteColorOptions;
     yellow: PaletteColorOptions;
+    shadowGrey: PaletteColorOptions;
   }
 
   interface Palette {
     black: PaletteColor;
     green: PaletteColor;
     yellow: PaletteColor;
+    shadowGrey: PaletteColor;
   }
 }
 
@@ -23,6 +25,7 @@ declare module '@mui/material/Button' {
     black: true;
     green: true;
     yellow: true;
+    shadowGrey: true;
   }
 }
 
@@ -30,8 +33,8 @@ const theme = createTheme({
   typography: {
     fontFamily: ['Noto Sans JP', 'sans-serif'].join(','),
     h2: {
-      fontSize: '24px',
-      fontWeight: 700,
+      fontSize: '32px',
+      fontWeight: 400,
     },
     body1: {
       fontSize: '16px',
@@ -48,11 +51,14 @@ const theme = createTheme({
       contrastText: '#ffffff',
     },
     green: {
-      main: '#237740',
+      main: '#006036',
     },
     yellow: {
       main: '#D0A900',
       contrastText: '#ffffff',
+    },
+    shadowGrey: {
+      main: '#D9D9D9',
     },
     text: {
       primary: '#262626',

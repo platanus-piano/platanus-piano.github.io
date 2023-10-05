@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import SwiperControllButton from '../atoms/SwiperControllButton';
+import PastPagination from '../atoms/PastPagination';
 
 type TProps = {
   concerts: TConcert[];
@@ -30,7 +31,7 @@ const PastConcerts = (props: TProps) => {
         alignItems: 'center',
       }}
     >
-      <SectionTitle title="Past Concerts" subTitle="過去の演奏会" sx={{}} />
+      <SectionTitle title="Past" subTitle="過去の演奏会" type="green" />
       <Box
         component="div"
         sx={{
@@ -41,13 +42,10 @@ const PastConcerts = (props: TProps) => {
         }}
       >
         <Swiper
-          // spaceBetween={50}
           slidesPerView={1}
           pagination={{
             clickable: true,
           }}
-          // modules={[Pagination]}
-          loop={true}
         >
           {concerts.map((concert, index) => (
             <SwiperSlide key={index.toString()}>
@@ -63,6 +61,7 @@ const PastConcerts = (props: TProps) => {
             }}
           >
             <SwiperControllButton type="prev" />
+            <PastPagination totalCount={concerts.length} />
             <SwiperControllButton type="next" />
           </Box>
         </Swiper>

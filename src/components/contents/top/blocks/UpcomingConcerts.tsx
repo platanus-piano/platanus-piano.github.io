@@ -3,7 +3,6 @@ import { TConcert } from '@/types/concerts';
 import { Box, SxProps } from '@mui/material';
 import React from 'react';
 import UpcomingItem from '../atoms/UpcomingItem';
-import Container from '@/components/parts/Container';
 
 type TProps = {
   concerts: TConcert[];
@@ -18,14 +17,22 @@ const UpcomingConcerts = (props: TProps) => {
       sx={{
         ...sx,
         width: '100%',
+        backgroundColor: 'green.main',
+        pt: 5,
+        pb: 10,
       }}
     >
-      <SectionTitle title="Upcoming Concerts" subTitle="今後の演奏会" />
-      <Container>
+      <SectionTitle title="Upcoming" subTitle="今後の演奏会" type="white" />
+      <Box
+        component="div"
+        sx={{
+          mt: 5,
+        }}
+      >
         {concerts.map((concert, index) => (
           <UpcomingItem concert={concert} key={index} />
         ))}
-      </Container>
+      </Box>
     </Box>
   );
 };
