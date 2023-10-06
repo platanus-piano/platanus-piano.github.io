@@ -21,7 +21,13 @@ const Container = (props: TProps) => {
       <Box
         component="div"
         sx={{
-          width: { xs: '95%', sm: '90%' },
+          width: {
+            xs: '300px',
+            sm: '500px',
+            md: '700px',
+            lg: '800px',
+            xl: '1000px',
+          },
         }}
       >
         {children}
