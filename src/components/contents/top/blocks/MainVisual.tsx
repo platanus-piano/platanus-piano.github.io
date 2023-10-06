@@ -5,6 +5,12 @@ import { useEffect, useState } from 'react';
 const MainVisual = () => {
   // state
   const [height, setHeight] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
+
+  // functions
+  const hancleScroll = () => {
+    setScrollY(window.scrollY);
+  };
 
   // effect
   useEffect(() => {
@@ -12,6 +18,16 @@ const MainVisual = () => {
       setHeight(window.innerHeight);
     }
   }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', hancleScroll);
+    return () => {
+      window.removeEventListener('scroll', hancleScroll);
+    };
+  }, []);
+
+  const overlayOpacity = Math.min(scrollY / (height * 0.8), 1);
+
   return (
     <Box
       component="section"
@@ -41,6 +57,17 @@ const MainVisual = () => {
         <source src="/movie/MVDemo.MOV" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundColor: `rgba(38,38, 38, ${overlayOpacity})`,
+          zIndex: 0,
+        }}
+      ></Box>
       <Box
         sx={{
           position: 'absolute',
