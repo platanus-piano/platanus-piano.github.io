@@ -40,7 +40,7 @@ export const getStaticProps = async () => {
   });
   const pastData = await client.get({
     endpoint: 'concerts',
-    queries: { limit: 2, filters: 'done[equals]true' },
+    queries: { limit: 3, filters: 'done[equals]true' },
   });
 
   return {

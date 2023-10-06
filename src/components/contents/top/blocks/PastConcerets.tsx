@@ -22,6 +22,7 @@ const PastConcerts = (props: TProps) => {
   return (
     <Box
       component="section"
+      id="past_jump"
       sx={{
         ...sx,
         width: '100%',

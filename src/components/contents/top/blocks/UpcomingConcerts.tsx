@@ -14,6 +14,7 @@ const UpcomingConcerts = (props: TProps) => {
   return (
     <Box
       component="section"
+      id="upcoming_jump"
       sx={{
         ...sx,
         width: '100%',

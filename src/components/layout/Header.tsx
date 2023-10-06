@@ -3,7 +3,19 @@ import Image from 'next/image';
 import React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 
-const Header = () => {
+type TProps = {
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const Header = (props: TProps) => {
+  // props
+  const { setOpen } = props;
+  // functions
+  const handleClick = () => {
+    console.log('click');
+    setOpen(true);
+  };
+
   return (
     <AppBar position="static" sx={{ bgcolor: 'black.main', height: '50px' }}>
       <Box
@@ -25,7 +37,7 @@ const Header = () => {
             position: 'relative',
           }}
         />
-        <IconButton>
+        <IconButton onClick={handleClick}>
           <MenuIcon sx={{ color: 'white', fontSize: '30px' }} />
         </IconButton>
       </Box>

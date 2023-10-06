@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Box } from '@mui/material';
 import AboutPart from '@/components/contents/about/blocks/AboutPart';
 import ActivityPart from '@/components/contents/about/blocks/ActivityPart';
+import EventPart from '@/components/contents/about/blocks/EventPart';
 
 export default function About() {
   return (
@@ -15,6 +16,7 @@ export default function About() {
       <Box component="main">
         <AboutPart />
         <ActivityPart />
+        <EventPart />
       </Box>
     </>
   );
