@@ -74,7 +74,6 @@ const Footer = () => {
     <Box
       sx={{
         width: '100%',
-        // height: '120px',
         backgroundColor: 'black.main',
         pt: 3,
         pb: 3,
@@ -85,13 +84,19 @@ const Footer = () => {
           width: '100%',
           display: 'flex',
           justifyContent: 'space-between',
-          px: 0.5,
           mb: 2,
+          pr: 2,
         }}
       >
         <Box
           sx={{
-            width: 'calc(100% - 130px)',
+            width: {
+              xs: '180px',
+              sm: '300px',
+              md: '400px',
+              lg: '500px',
+              xl: '600px',
+            },
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'start',
@@ -105,6 +110,7 @@ const Footer = () => {
                 flexDirection: 'column',
                 justifyContent: 'start',
                 alignItems: 'start',
+                gap: { xs: 1, sm: 2 },
               }}
             >
               {group.contents.map((content, contentIndex) => (
@@ -112,6 +118,7 @@ const Footer = () => {
                   onClick={content.onClick}
                   key={contentIndex}
                   sx={{
+                    width: { xs: '60px' },
                     textAlign: 'center',
                     textTransform: 'none',
                     m: 0,
@@ -143,6 +150,7 @@ const Footer = () => {
               width: '100%',
               aspectRatio: '5/2',
               position: 'relative',
+              mt: 1,
             }}
           >
             <Image

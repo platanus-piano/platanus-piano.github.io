@@ -34,7 +34,7 @@ const MainVisual = () => {
       sx={{
         position: 'relative',
         width: '100%',
-        height: `${height - 50}px`,
+        height: `${height}px`,
         overflow: 'hidden',
       }}
     >

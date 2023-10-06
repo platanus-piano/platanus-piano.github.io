@@ -42,9 +42,11 @@ const Header = (props: TProps) => {
 
   return (
     <HideOnScroll>
-      <AppBar sx={{ bgcolor: 'black.main', height: '50px' }}>
+      <AppBar sx={{ bgcolor: 'black.main', height: '60px' }}>
         <Box
           sx={{
+            width: '100%',
+            height: '100%',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
