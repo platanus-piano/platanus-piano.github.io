@@ -7,12 +7,12 @@ const Twitter = () => {
   return (
     <Box
       component="section"
-      sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+      sx={{ width: '100%', display: 'flex', justifyContent: 'center', my: 5 }}
     >
       <a
         className="twitter-timeline"
-        data-lang="ja"
-        data-theme="light"
+        data-width="300"
+        data-height="500"
         href="https://twitter.com/platanus_piano?ref_src=twsrc%5Etfw"
       >
         tweet by platanux_piano
