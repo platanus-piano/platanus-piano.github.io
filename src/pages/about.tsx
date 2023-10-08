@@ -3,8 +3,10 @@ import { Box } from '@mui/material';
 import AboutPart from '@/components/contents/about/blocks/AboutPart';
 import ActivityPart from '@/components/contents/about/blocks/ActivityPart';
 import EventPart from '@/components/contents/about/blocks/EventPart';
+import { client } from '@/configs/microCMS/client';
+import { TEvent } from '@/types/events';
 
-export default function About() {
+export default function About({ events }: { events: TEvent[] }) {
   return (
     <>
       <Head>
@@ -16,8 +18,19 @@ export default function About() {
       <Box component="main">
         <AboutPart />
         <ActivityPart />
-        <EventPart />
+        <EventPart events={events} />
       </Box>
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const data = await client.get({
+    endpoint: 'events',
+  });
+  return {
+    props: {
+      events: data.contents,
+    },
+  };
+};

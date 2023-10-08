@@ -10,6 +10,7 @@ declare module '@mui/material/styles' {
     green: PaletteColorOptions;
     yellow: PaletteColorOptions;
     shadowGrey: PaletteColorOptions;
+    greyBackground: PaletteColorOptions;
   }
 
   interface Palette {
@@ -17,6 +18,7 @@ declare module '@mui/material/styles' {
     green: PaletteColor;
     yellow: PaletteColor;
     shadowGrey: PaletteColor;
+    greyBackground: PaletteColor;
   }
 }
 
@@ -26,6 +28,7 @@ declare module '@mui/material/Button' {
     green: true;
     yellow: true;
     shadowGrey: true;
+    greyBackground: true;
   }
 }
 
@@ -60,11 +63,14 @@ const theme = createTheme({
     shadowGrey: {
       main: '#D9D9D9',
     },
+    greyBackground: {
+      main: '#F5F5F5',
+    },
     text: {
       primary: '#262626',
     },
     background: {
-      default: '#F5F5F5',
+      default: '#ffffff',
     },
   },
 });
