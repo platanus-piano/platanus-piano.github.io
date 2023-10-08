@@ -33,7 +33,11 @@ const content = {
 
 const ActivityPart = () => {
   return (
-    <Box component="section" id="activity_jump" sx={{ width: '100%' }}>
+    <Box
+      component="section"
+      id="activity_jump"
+      sx={{ width: '100%', backgroundColor: 'greyBackground.main' }}
+    >
       <SectionTitle title="Activity" subTitle="活動内容" type="green" />
       <Container sx={{ mt: 3 }}>
         {content.first.map((item, index) => (

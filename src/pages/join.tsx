@@ -12,7 +12,7 @@ export default function Join() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box component="main">
+      <Box component="main" sx={{ pt: '60px' }}>
         <JoinPart />
         <GreetingPart sx={{ mt: 3, pb: 5 }} />
       </Box>

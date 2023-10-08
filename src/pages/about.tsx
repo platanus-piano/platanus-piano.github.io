@@ -15,7 +15,7 @@ export default function About({ events }: { events: TEvent[] }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box component="main">
+      <Box component="main" sx={{ pt: '60px' }}>
         <AboutPart />
         <ActivityPart />
         <EventPart events={events} />

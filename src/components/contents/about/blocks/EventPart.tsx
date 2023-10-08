@@ -51,6 +51,8 @@ const EventPart = (props: TProps) => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
+        pt: 3,
+        pb: 3,
       }}
     >
       <SectionTitle title="EVENT" subTitle="イベント" type="green" />

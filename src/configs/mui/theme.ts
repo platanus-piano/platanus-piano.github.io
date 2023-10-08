@@ -55,6 +55,7 @@ const theme = createTheme({
     },
     green: {
       main: '#006036',
+      light: '#87D2A1',
     },
     yellow: {
       main: '#D0A900',

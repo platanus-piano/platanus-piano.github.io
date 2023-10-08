@@ -12,7 +12,6 @@ const Container = (props: TProps) => {
     <Box
       component="div"
       sx={{
-        ...sx,
         width: '100%',
         display: 'flex',
         justifyContent: 'center',
@@ -21,6 +20,11 @@ const Container = (props: TProps) => {
       <Box
         component="div"
         sx={{
+          ...sx,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
           width: {
             xs: '300px',
             sm: '500px',

@@ -21,7 +21,10 @@ const content = [
 
 const AboutPart = () => {
   return (
-    <Box component="section" sx={{ width: '100%', pt: 3 }}>
+    <Box
+      component="section"
+      sx={{ width: '100%', pt: 3, backgroundColor: 'greyBackground.main' }}
+    >
       <SectionTitle title="About" subTitle="プラタナスの会とは" type="green" />
       <Box
         component="div"

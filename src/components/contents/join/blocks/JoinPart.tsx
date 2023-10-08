@@ -1,14 +1,23 @@
 import Container from '@/components/parts/Container';
 import SectionTitle from '@/components/parts/SectionTitle';
-import { Box, SxProps, Typography } from '@mui/material';
+import { Box, Button, SxProps, Typography } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
+import MemberTable from '../atoms/MemberTable';
 
 type TProps = {
   sx?: SxProps;
 };
 
 const content = {
+  invitation: [
+    {
+      content: '入会を考えている方も、まだ迷っている方も、',
+    },
+    {
+      content: 'まずはこちらのオープンチャットに参加してください！',
+    },
+  ],
   first: [
     {
       content: 'プラタナスの会はいつでも会員を募集しております。',
@@ -22,10 +31,10 @@ const content = {
     },
   ],
   second: [
-    {
-      content:
-        '学年人数学士1年生10学士2年生17学士3年生3学士4年生1修士・博士4教職員若干名',
-    },
+    // {
+    //   content:
+    //     '学年人数学士1年生10学士2年生17学士3年生3学士4年生1修士・博士4教職員若干名',
+    // },
     {
       content:
         '演奏楽器・楽器経験も不問です。入会してから新しくピアノを始めたメンバーもいます。また、他サークルとの兼部も問題ありません。',
@@ -40,6 +49,11 @@ const content = {
 const JoinPart = (props: TProps) => {
   // props
   const { sx } = props;
+  // functions
+  const JoinOpenChat = () => {
+    console.log('clicked');
+  };
+
   return (
     <Box
       component="section"
@@ -61,21 +75,59 @@ const JoinPart = (props: TProps) => {
           mb: 2,
         }}
       />
+
       <Box
         sx={{
           width: '100%',
-          aspectRatio: '16/10',
-          position: 'relative',
+          backgroundColor: 'green.light',
+          pb: 5,
         }}
       >
-        <Image
-          src="/join/joinImg.png"
-          alt="join image"
-          fill
-          style={{
-            objectFit: 'contain',
+        <Box
+          sx={{
+            width: '100%',
+            aspectRatio: '390/227',
+            position: 'relative',
           }}
-        />
+        >
+          <Image
+            src="/join/joinImg.png"
+            alt="join image"
+            fill
+            style={{
+              objectFit: 'contain',
+            }}
+          />
+        </Box>
+        <Container sx={{ gap: 2 }}>
+          <Typography
+            variant="body2"
+            component="p"
+            sx={{
+              color: '#ffffff',
+              mt: 3,
+            }}
+          >
+            {content.invitation.map((item, index) => (
+              <span key={index.toString()}>{item.content}</span>
+            ))}
+          </Typography>
+          <Button
+            variant="outlined"
+            color="green"
+            sx={{
+              borderRadius: '0px',
+              py: 2,
+            }}
+            onClick={JoinOpenChat}
+          >
+            <Typography variant="body2" component="span">
+              <span>新歓公式オープンチャットに</span>
+              <br />
+              <span>参加する</span>
+            </Typography>
+          </Button>
+        </Container>
       </Box>
       <Container sx={{ mt: 3 }}>
         {content.first.map((item, index) => (
@@ -88,8 +140,11 @@ const JoinPart = (props: TProps) => {
             {item.content}
           </Typography>
         ))}
-      </Container>
-      <Container sx={{ mt: 3 }}>
+        <MemberTable
+          sx={{
+            width: { xs: '200px' },
+          }}
+        />
         {content.second.map((item, index) => (
           <Typography
             variant="body2"
