@@ -28,6 +28,10 @@ const UpcomingConcerts = (props: TProps) => {
         component="div"
         sx={{
           mt: 5,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '20px',
         }}
       >
         {concerts.map((concert, index) => (

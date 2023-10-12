@@ -17,6 +17,7 @@ const MusicWave = (props: TProps) => {
         ...sx,
         position: 'relative',
         aspectRatio: '268/1286',
+        display: { xs: 'block', md: 'none' },
       }}
     >
       <Image

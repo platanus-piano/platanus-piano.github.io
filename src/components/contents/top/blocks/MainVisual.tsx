@@ -54,7 +54,7 @@ const MainVisual = () => {
           transform: 'translate(-50%, -50%)',
         }}
       >
-        <source src="/movie/MVDemo.MOV" type="video/mp4" />
+        <source src="/movie/movie_for_phone_ver1.mov" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <Box
@@ -68,7 +68,7 @@ const MainVisual = () => {
           zIndex: 0,
         }}
       ></Box>
-      <Box
+      {/* <Box
         sx={{
           position: 'absolute',
           width: { xs: '300px' },
@@ -86,7 +86,7 @@ const MainVisual = () => {
             objectFit: 'contain',
           }}
         />
-      </Box>
+      </Box> */}
     </Box>
   );
 };

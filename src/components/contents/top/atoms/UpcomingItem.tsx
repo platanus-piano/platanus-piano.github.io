@@ -11,13 +11,15 @@ type TProps = {
 
 const UpcomingItem = (props: TProps) => {
   const { concert, sx } = props;
+  const aspectRatio = concert.image.width / concert.image.height;
   return (
     <Box
       component="div"
       sx={{
         ...sx,
         width: '100%',
-        aspectRatio: '1/1',
+        maxWidth: '500px',
+        aspectRatio: `${aspectRatio}`,
         position: 'relative',
       }}
     >

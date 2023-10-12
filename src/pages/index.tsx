@@ -28,7 +28,7 @@ export default function Home({
         <UpcomingConcerts concerts={upcoming} />
         <PastConcerts concerts={past} sx={{ mt: 5, mb: 5 }} />
         {/* 未完成 */}
-        <Twitter />
+        {/* <Twitter /> */}
       </Box>
     </>
   );
