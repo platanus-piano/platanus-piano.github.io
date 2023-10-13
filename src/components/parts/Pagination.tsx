@@ -32,8 +32,8 @@ const Pagination = (props: TProps) => {
       }}
     >
       {items.map(({ page, type, selected, ...item }, index) => {
-        let children = null;
         console.log(page);
+        let children = null;
         if (type === 'page') {
           children = (
             <Box

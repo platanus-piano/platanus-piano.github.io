@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-// import Image from 'next/image';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 const MainVisual = () => {
@@ -36,6 +36,7 @@ const MainVisual = () => {
         width: '100%',
         height: `${height}px`,
         overflow: 'hidden',
+        backgroundColor: '#000000',
       }}
     >
       <video
@@ -46,15 +47,18 @@ const MainVisual = () => {
           position: 'absolute',
           top: '50%',
           left: '50%',
-          minWidth: '100%',
-          minHeight: '100%',
-          width: 'auto',
-          height: 'auto',
-          zIndex: -1,
+          // minWidth: '100%',
+          // minHeight: '100%',
+          // width: 'auto',
+          // height: 'auto',
+          width: '100%',
+          height: '100%',
+          zIndex: 1,
           transform: 'translate(-50%, -50%)',
+          objectFit: 'cover',
         }}
       >
-        <source src="/movie/movie_for_phone_ver1.mov" type="video/mp4" />
+        <source src="/movie/movie_for_phone_ver2.mov" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <Box
@@ -65,10 +69,10 @@ const MainVisual = () => {
           width: '100%',
           height: '100%',
           backgroundColor: `rgba(38,38, 38, ${overlayOpacity})`,
-          zIndex: 0,
+          zIndex: 3,
         }}
       ></Box>
-      {/* <Box
+      <Box
         sx={{
           position: 'absolute',
           width: { xs: '300px' },
@@ -76,6 +80,7 @@ const MainVisual = () => {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
+          zIndex: 2,
         }}
       >
         <Image
@@ -86,7 +91,7 @@ const MainVisual = () => {
             objectFit: 'contain',
           }}
         />
-      </Box> */}
+      </Box>
     </Box>
   );
 };

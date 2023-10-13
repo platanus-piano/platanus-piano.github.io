@@ -9,6 +9,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import SwiperControllButton from '../atoms/SwiperControllButton';
 import PastPagination from '../atoms/PastPagination';
+// import { Autoplay } from 'swiper/modules';
 
 type TProps = {
   concerts: TConcert[];
@@ -47,6 +48,9 @@ const PastConcerts = (props: TProps) => {
           pagination={{
             clickable: true,
           }}
+          // modules={[Autoplay]}
+          // autoplay={{ delay: 5000 }}
+          // loop={true}
         >
           {concerts.map((concert, index) => (
             <SwiperSlide key={index.toString()}>

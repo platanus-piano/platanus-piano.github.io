@@ -50,9 +50,7 @@ const JoinPart = (props: TProps) => {
   // props
   const { sx } = props;
   // functions
-  const JoinOpenChat = () => {
-    console.log('clicked');
-  };
+  const JoinOpenChat = () => {};
 
   return (
     <Box

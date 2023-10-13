@@ -36,7 +36,6 @@ const Header = (props: TProps) => {
   const { setOpen } = props;
   // functions
   const handleClick = () => {
-    console.log('click');
     setOpen(true);
   };
 

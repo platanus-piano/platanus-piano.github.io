@@ -20,9 +20,7 @@ const PastItem = (props: TProps) => {
   const { FormatDate } = useFormat();
 
   // functions
-  const handleClick = () => {
-    console.log('click');
-  };
+  const handleClick = () => {};
 
   return (
     <Box
