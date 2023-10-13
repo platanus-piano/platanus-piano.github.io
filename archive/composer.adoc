@@ -1,0 +1,41 @@
+= 作曲者別アーカイブ
+
+== 作曲者一覧
+
+過去にプラタナスの会で演奏された曲を，作曲者別で振り返ることができます．
+
+++++
+<div id='holder'></div>
+<script>
+(function() {
+    $.getJSON( "/archive/composer/data.json", {
+        format: "json"
+    })
+    .done(function(data) {
+        var str = "";
+        var prev_name = " ";
+
+        for(var composer of data){
+            var name = composer[0].composer;
+            if(prev_name[0] != name[0]){
+                str += "<h3>" + name[0] + "</h3>";
+                prev_name = name;
+            }
+
+            var n = composer.length;
+
+            str += "<ul>";
+            str += "<li><p>";
+            if(n >= 5) str += "<strong>";
+            str += "<a href='/archive/composer/?name=" + name + "'>" + name + "</a>";
+            str += " (" + n + ")";
+            if(n >= 5) str += "</strong>";
+            str += "</p></li>";
+            str += "</ul>";
+        }
+
+        $('#holder').append(str);
+    });
+})();
+</script>
+++++

@@ -1,0 +1,51 @@
+= Archive
+
+== Archive
+
+過去の演奏会の記録です．
+
+何か間違いを発見されましたら，連絡いただけたらと思います．
+
+また，プログラム未収録のコンサートがいくつかあります．現物をお持ちの方がいらっしゃいましたら連絡いただけると嬉しいです．
+
+=== link:/archive/player.html[演奏者別]
+=== link:/archive/composer.html[作曲者別]
+
+=== 演奏会別
+
+++++
+<div id='holder'></div>
+<script>
+(function() {
+    $.getJSON( "/archive/all.json", {
+        format: "json"
+    })
+    .done(function(data) {
+        var str = "";
+
+        var prev_year = "0000";
+        for(var concert of data){
+            if(prev_year != concert.year){
+                str += "<h4>" + concert.year + "</h4>";
+                prev_year = concert.year;
+            }
+            str += "<ul>";
+
+            str += "<li><p>";
+            str += concert.month + "月 : ";
+            str += "<a href='/archive/concert/?id=" + concert.id + "'>";
+            str += concert.name;
+            str += "</a>";
+            if(!concert.program.length){
+                str += " (プログラム未収録)";
+            }
+            str += "<p></li>";
+
+            str += "</ul>";
+        }
+
+        $('#holder').append(str);
+    });
+})();
+</script>
+++++
