@@ -3,8 +3,6 @@ import SectionTitle from '@/components/parts/SectionTitle';
 import { Box, SxProps, Typography } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
-import { basePath } from '@/../next.config';
-const BASE_PATH = basePath ? basePath : '';
 
 type TProps = {
   sx?: SxProps;
@@ -68,7 +66,7 @@ const GreetingPart = (props: TProps) => {
         }}
       >
         <Image
-          src={`${BASE_PATH}/join/signImg.png`}
+          src="/join/signImg.png"
           alt="sign image"
           fill
           style={{

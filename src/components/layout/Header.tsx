@@ -8,8 +8,6 @@ import {
 import Image from 'next/image';
 import React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import { basePath } from '@/../next.config';
-const BASE_PATH = basePath ? basePath : '';
 
 type TProps = {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -56,7 +54,7 @@ const Header = (props: TProps) => {
           }}
         >
           <Image
-            src={`${BASE_PATH}/logo.png`}
+            src="/logo.png"
             alt="logo"
             width={180}
             height={50}
