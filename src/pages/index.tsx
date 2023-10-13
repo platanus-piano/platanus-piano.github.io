@@ -6,7 +6,6 @@ import { client } from '@/configs/microCMS/client';
 import { TConcert } from '@/types/concerts';
 // import Twitter from '@/components/contents/top/blocks/Twitter';
 import MainVisual from '@/components/contents/top/blocks/MainVisual';
-import Twitter from '@/components/contents/top/blocks/Twitter';
 
 export default function Home({
   upcoming,

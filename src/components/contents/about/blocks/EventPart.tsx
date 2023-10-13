@@ -60,7 +60,7 @@ const EventPart = (props: TProps) => {
         sx={{
           width: '100%',
           position: 'relative',
-          minHeight: `${(events.length) * 200 + 40}px`,
+          minHeight: `${events.length * 200 + 40}px`,
           maxWidth: '800px',
         }}
       >
