@@ -3,6 +3,8 @@ import SectionTitle from '@/components/parts/SectionTitle';
 import { Box, Typography } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
+import { basePath } from '@/../next.config';
+const BASE_PATH = basePath ? basePath : '';
 
 const content = {
   first: [
@@ -60,7 +62,7 @@ const ActivityPart = () => {
         }}
       >
         <Image
-          src="/about/activityImg.png"
+          src={`${BASE_PATH}/about/activityImg.png`}
           alt="concert image"
           fill
           style={{

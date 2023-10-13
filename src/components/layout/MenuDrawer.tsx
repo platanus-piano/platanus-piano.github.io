@@ -7,6 +7,8 @@ import CloseIcon from '@mui/icons-material/Close';
 import { TMenuDrawerGroup } from '@/types/menuDrawer';
 import MenuDrawerItem from '../parts/MenuDrawerItem';
 import Image from 'next/image';
+import { basePath } from '@/../next.config';
+const BASE_PATH = basePath ? basePath : '';
 
 type TProps = {
   open: boolean;
@@ -125,7 +127,7 @@ const MenuDrawer = (props: TProps) => {
           }}
         >
           <Image
-            src="/logo.png"
+            src={`${BASE_PATH}/logo.png`}
             alt="logo"
             width={180}
             height={50}
