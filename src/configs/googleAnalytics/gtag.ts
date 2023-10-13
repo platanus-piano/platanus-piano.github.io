@@ -1,5 +1,5 @@
 export const GOOGLE_ANALYTICS_ID =
-  String(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID) || '';
+  String(process.env.NEXT_PUBLIC_GOOGLE_TRACKING_ID) || '';
 
 export const pageview = (url: string) => {
   if (!GOOGLE_ANALYTICS_ID) return;
