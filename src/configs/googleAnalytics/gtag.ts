@@ -1,5 +1,4 @@
-export const GOOGLE_ANALYTICS_ID =
-  String(process.env.NEXT_PUBLIC_GOOGLE_TRACKING_ID) || '';
+export const GOOGLE_ANALYTICS_ID = 'G-CT4MDW1800';
 
 export const pageview = (url: string) => {
   if (!GOOGLE_ANALYTICS_ID) return;
