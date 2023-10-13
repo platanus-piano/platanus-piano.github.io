@@ -1,6 +1,8 @@
 import { Box } from '@mui/material';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { basePath } from '@/../next.config';
+const BASE_PATH = basePath ? basePath : '';
 
 const MainVisual = () => {
   // state
@@ -84,7 +86,7 @@ const MainVisual = () => {
         }}
       >
         <Image
-          src="/logo.png"
+          src={`${BASE_PATH}/logo.png`}
           alt="logo"
           fill
           style={{

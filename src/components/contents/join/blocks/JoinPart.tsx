@@ -4,6 +4,8 @@ import { Box, Button, SxProps, Typography } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 import MemberTable from '../atoms/MemberTable';
+import { basePath } from '@/../next.config';
+const BASE_PATH = basePath ? basePath : '';
 
 type TProps = {
   sx?: SxProps;
@@ -89,7 +91,7 @@ const JoinPart = (props: TProps) => {
           }}
         >
           <Image
-            src="/join/joinImg.png"
+            src={`${BASE_PATH}/join/joinImg.png`}
             alt="join image"
             fill
             style={{
